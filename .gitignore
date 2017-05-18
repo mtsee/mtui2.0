@@ -1,0 +1,5 @@
+/node_modules
+/build/*.hot-update.js
+/build/*.hot-update.json
+/npm-debug.log
+/gulpfile.babel.js

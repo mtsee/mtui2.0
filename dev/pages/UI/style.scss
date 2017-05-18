@@ -1,0 +1,54 @@
+/*ui CSS*/
+.ui{}
+.ui .mt-panel,.ui .mt-panel-min{
+	margin-bottom:20px;
+}
+.ui .btns{
+	margin-top:10px;
+	a{
+		margin-right: 10px;
+	}
+}
+.ui .grids{
+	border:1px solid #E9EEF1;
+	padding:10px;
+	margin-top:10px;
+	.mt-grid{
+		background:#E8ECF0;
+		margin-top:10px;
+		padding:5px;
+	}
+}
+
+.hljs{
+	font-family:"Microsoft YaHei";
+	font-size:12px;
+}
+
+.collapse .mt-collapse-content{
+	padding:10px;
+	font-size:12px;
+}
+
+.ui-icons{
+	padding:20px 0;
+	li{
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+		text-align: center;
+		border: 1px solid rgba(0,0,0,0.1);
+		margin: 5px;
+		.iconfont{
+			font-size: 30px;
+			vertical-align: middle;
+		}
+		&:before{
+			display: inline-block;
+			content: '';
+			height: 100%;
+			width: 0;
+			vertical-align: middle;
+		}
+	}
+}
