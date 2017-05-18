@@ -19,7 +19,8 @@ class Header extends Component {
                     <Link to={HOME + "/ui/redux"}><i>Redux案例</i></Link>
                     <Link to={HOME + "/help"}><i>帮助</i></Link>
                     <Link className="update" to={HOME + "/update"}><i>更新</i></Link>
-                    <a target="blank" href="https://git.oschina.net/676015863/mtui2.0"><i>Github</i></a>
+                    <a target="blank" href="https://git.oschina.net/676015863/mtui2.0"><i>oschina</i></a>
+                    <a target="blank" href="https://github.com/mtsee/mtui2.0"><i>Github</i></a>
                 </div>
             </div>
         </div>;

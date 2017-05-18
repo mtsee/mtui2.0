@@ -6561,7 +6561,6 @@ label {
   .mt-tabs .mt-tabs-overflow {
     margin: 0 20px; }
   .mt-tabs .mt-tabs-headbox {
-    -webkit-transition: .3s;
     transition: .3s;
     position: relative; }
     .mt-tabs .mt-tabs-headbox ul {
@@ -6595,7 +6594,6 @@ label {
     height: 2px;
     width: 20px;
     background: #1c84c6;
-    -webkit-transition: .3s;
     transition: .3s;
     z-index: 100; }
 
@@ -6603,7 +6601,6 @@ label {
   position: relative;
   overflow: hidden; }
   .mt-tabs-animate .mt-tabs-item {
-    -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
@@ -6685,7 +6682,6 @@ label {
       font-weight: bolder;
       color: #333;
       cursor: pointer;
-      -webkit-transition: .3s;
       transition: .3s;
       border-radius: 2px; }
       .mt-date .mt-date-head .mt-date-stime:hover {
@@ -6724,7 +6720,6 @@ label {
       display: inline-block;
       line-height: 20px;
       color: #666;
-      -webkit-transition: 0.3s;
       transition: 0.3s;
       border-radius: 2px;
       position: relative;
@@ -6834,7 +6829,6 @@ label {
     z-index: 10;
     background: #fff;
     border-radius: 100px;
-    -webkit-transition: 0.3s;
     transition: 0.3s; }
 
 .mt-switch-disabled {
@@ -6894,7 +6888,6 @@ label {
     border: 1px solid #ccc;
     border-radius: 100px;
     margin-right: 5px;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     box-sizing: content-box; }
     .mt-radio .mt-radio-icon:after {
@@ -6902,7 +6895,6 @@ label {
       float: left;
       display: inline-block;
       display: none\9\0;
-      -webkit-transition: 0.2s;
       transition: 0.2s;
       width: 60%;
       height: 60%;
@@ -6967,7 +6959,6 @@ label {
     vertical-align: middle;
     border: 1px solid #ccc;
     margin-right: 5px;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     box-sizing: content-box;
     position: relative; }
@@ -6978,7 +6969,6 @@ label {
       color: #108ee9;
       float: left;
       display: inline-block;
-      -webkit-transition: 0.2s;
       transition: 0.2s;
       width: 100%;
       height: 100%;
@@ -7113,7 +7103,6 @@ label {
       margin-left: -7px;
       margin-top: -7px;
       border: 2px solid #108ee9;
-      -webkit-transition: 0.3s;
       transition: 0.3s;
       -webkit-transform: scale(1);
               transform: scale(1); }
@@ -7146,9 +7135,7 @@ label {
   text-align: center;
   background-color: #0e90d2;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: 10px .6s ease;
   transition: 10px .6s ease;
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 36px 36px;
   -webkit-animation: sliderbar-bar-stripes 2s linear infinite;
@@ -7231,10 +7218,8 @@ label {
 */
 .mt-validate {
   position: relative;
-  -webkit-transition: 0.3s;
   transition: 0.3s; }
   .mt-validate .icon-null {
-    -webkit-transition: 0.3s;
     transition: 0.3s;
     -webkit-transform: scale(0);
             transform: scale(0); }
@@ -7304,7 +7289,6 @@ label {
   .mt-swiper .mt-swiper-overflow {
     margin: 0 20px; }
   .mt-swiper .mt-swiper-headbox {
-    -webkit-transition: .3s;
     transition: .3s; }
     .mt-swiper .mt-swiper-headbox ul {
       word-break: keep-all;
@@ -7332,7 +7316,6 @@ label {
     z-index: 200;
     border: 1px solid #fff;
     color: #fff;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     opacity: 0.6; }
     .mt-swiper .mt-swiper-prevbutton:hover, .mt-swiper .mt-swiper-nextbutton:hover {
@@ -7373,7 +7356,6 @@ label {
     height: 2px;
     width: 20px;
     background: #1c84c6;
-    -webkit-transition: .3s;
     transition: .3s;
     z-index: 100; }
 
@@ -7383,7 +7365,6 @@ label {
   .mt-swiper-animate-move .mt-swiper-item {
     padding: 0;
     margin: 0;
-    -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
@@ -7411,7 +7392,6 @@ label {
   .mt-swiper-animate-fade .mt-swiper-item {
     padding: 0;
     margin: 0;
-    -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
     display: inline-block;
     width: 100%;
@@ -7471,7 +7451,6 @@ label {
       padding: 0 10px;
       position: relative; }
       .mt-collapse .mt-collapse-header .iconfont:before {
-        -webkit-transition: 0.3s;
         transition: 0.3s;
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -7677,7 +7656,6 @@ label {
 * @author : Mantou
 */
 .mt-tip-success {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   height: 40px;
   line-height: 40px;
@@ -7698,7 +7676,6 @@ label {
     vertical-align: middle; }
 
 .mt-tip-warning {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   height: 40px;
   line-height: 40px;
@@ -7719,7 +7696,6 @@ label {
     vertical-align: middle; }
 
 .mt-tip-danger {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   height: 40px;
   line-height: 40px;

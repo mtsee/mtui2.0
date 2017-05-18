@@ -235,7 +235,11 @@ class Select extends Component {
             offClickBlank(this.handler);
         }
         this.refBtn.removeEventListener('mouseenter', this.hoverHandler);
-        this.div.remove();
+        if(MT_MS === 'IE') {
+            this.div.removeNode(true);
+        }else{
+            this.div.remove();
+        }
         ReactDOM.unmountComponentAtNode(this.div);
     }
 
