@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import DatePickerBox from '../dateCore/DatePickerBox';
 import { getMDay, weekNumber, addAndDelOneMonth, addOrDelMonthDay, getDateNow, formatDate, setHHMMSS, setMonths, strToObj } from '../dateCore/dateCore';
 import { position } from '../utils/offset';
-import assign from '../utils/assign';
 import { getXY, clickBlank, offClickBlank } from '../utils/triggerBlank';
 
 class DatePickers extends Component {
@@ -67,10 +66,10 @@ class DatePickers extends Component {
             }
 
             let { height, left, top, width } = this.setPlace();
-            let style = assign([{
+            let style = Object.assign({
                 left: left + 460 > document.body.offsetWidth ? document.body.offsetWidth - 460 - 10 : left, // 判断left,不能超过body区域
                 top: top + height
-            }, this.props.modalStyle, { display: this.state.show ? 'block' : 'none' }]);
+            }, this.props.modalStyle, { display: this.state.show ? 'block' : 'none' });
             let { mid, format, ...other } = this.props;
 
             let cName = ['mt-dates'];

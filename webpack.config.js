@@ -31,14 +31,14 @@ module.exports = {
     },
     devtool: "cheap-module-eval-source-map", //生成map
     //插件项
-    plugins: [//将外部的包导出成一个公用的文件比如 jquery，react, react-dom 等
+    plugins: [ //将外部的包导出成一个公用的文件比如 jquery，react, react-dom 等
         new HtmlwebpackPlugin({
             title: 'mtui',
-            template:'./dev/index.html',//'./dev/index.html', //html模板路径
+            template: './dev/index.html', //'./dev/index.html', //html模板路径
             filename: 'index.html',
-            inject:true,  //允许插件修改哪些内容，包括head与body
-            hash:false //为静态资源生成hash值
-        }),//添加我们的插件 会自动生成一个html文件
+            inject: true, //允许插件修改哪些内容，包括head与body
+            hash: false //为静态资源生成hash值
+        }), //添加我们的插件 会自动生成一个html文件
         //new CleanPlugin(['./build/*.hot-update.js','./build/*.hot-update.json']),
         //把指定文件夹xia的文件复制到指定的目录
         // new CopyWebpackPlugin([{
@@ -46,9 +46,9 @@ module.exports = {
         //     to: 'build'
         // }]),
         new webpack.DefinePlugin({ //压缩 React
-          "process.env": {
-            NODE_ENV: JSON.stringify("development") //development,production
-          }
+            "process.env": {
+                NODE_ENV: JSON.stringify("development") //development,production
+            }
         }),
         new webpack.NoErrorsPlugin(), //启用报错不打断模式
         new webpack.HotModuleReplacementPlugin() // 开启全局的模块热替换（HMR）
@@ -57,27 +57,26 @@ module.exports = {
     module: {
         //加载器配置
         //凡是.js结尾的文件都是用babel-loader做处理，而.jsx结尾的文件会先经过jsx-loader处理，然后经过babel-loader处理
-        loaders: [
-            {
-                test:/\.jsx?$/,
-                exclude:/(node_modules)/,
+        loaders: [{
+                test: /\.jsx?$/,
+                exclude: /(node_modules)/,
                 // 在这里添加 react-hot，注意这里使用的是loaders，所以不能用 query，应该把presets参数写在 babel 的后面
-                loaders: ["babel-loader"]//loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],//loaders: ["babel-loader"],//
+                loaders: ["babel-loader"] //loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],//loaders: ["babel-loader"],//
             },
-            {test: /\.(woff|eot|ttf)$/i, loader: 'file-loader?name=./assets/fonts/[name].[ext]'},
-            {test: /\.scss$/, loader: "style!css!sass?sourceMap"},
-            {test:/\.css$/, loader: "style!css"},
-            {test: /\.(png|jpg|gif)$/, loader: "file-loader?name=./assets/imgs/[name].[ext]"}
+            { test: /\.(woff|eot|ttf)$/i, loader: 'file-loader?name=./assets/fonts/[name].[ext]' },
+            { test: /\.scss$/, loader: "style!css!sass?sourceMap" },
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.(png|jpg|gif)$/, loader: "file-loader?name=./assets/imgs/[name].[ext]" }
         ]
     },
     devServer: {
-        contentBase: path.resolve(ROOT_PATH, 'build'),// 输出文件的路径
+        contentBase: path.resolve(ROOT_PATH, 'build'), // 输出文件的路径
         historyApiFallback: true,
         hot: true, // 开启服务器的模块热替换（HMR）
-        inline:true,
+        inline: true,
         progress: true,
         stats: 'error-only',
         host: host,
         port: port
-      }
+    }
 };

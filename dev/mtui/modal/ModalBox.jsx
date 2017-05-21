@@ -1,7 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import assign from '../utils/assign';
 
 class ModalBox extends Component {
 
@@ -53,10 +52,10 @@ class ModalBox extends Component {
 
     render(){
         var {height, width} = this.props.style;
-        var style = assign([{
+        var style = Object.assign({
             marginLeft: - (width || 600) / 2,
             marginTop: - (height || 400) / 2
-        }, this.props.style]);
+        }, this.props.style);
         
         return <div className="mt-modal" id={this.props.mid} 
                     style={{

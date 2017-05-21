@@ -106,7 +106,7 @@ class Button extends Component {
         }
 
         let styles = style || {};
-        Object.assign({
+        styles = Object.assign({
             width: ( htmlType === 'submit' && block ) ? '100%' : 'auto'
         }, styles);
 

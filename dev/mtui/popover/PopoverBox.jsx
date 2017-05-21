@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import assign from '../utils/assign';
 import {position} from '../utils/offset';
 
 class PopoverBox extends Component {
@@ -65,10 +64,10 @@ class PopoverBox extends Component {
     }
 
     render(){
-        var style = assign([
+        var style = Object.assign(
             this.state.style, 
             {display: this.state.show ? 'block' : 'none'}, 
-            this.props.style]);
+            this.props.style);
 
         var cName = ['mt-popover', 'animated bounceIn'];
         if(this.props.place){

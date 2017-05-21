@@ -1,7 +1,6 @@
 'use strict';
 import React,  { Component } from 'react';
 import ReactDOM from 'react-dom';
-import assign from '../utils/assign';
 import { toArray } from '../utils/toArray';
 
 class SelectModal extends Component {

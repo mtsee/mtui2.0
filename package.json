@@ -1,7 +1,7 @@
 {
   "name": "mtui",
   "author": "Mantou",
-  "version": "2.4.22",
+  "version": "2.4.23",
   "description": "webpack and gulp for react",
   "main": "lib/index.js",
   "license": "MIT",
@@ -68,6 +68,7 @@
     "example": "example"
   },
   "dependencies": {
+    "draft-js": "^0.10.1",
     "mtui": "^2.1.4"
   }
 }

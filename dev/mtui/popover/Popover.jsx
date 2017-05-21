@@ -2,7 +2,6 @@
 import React,  { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PopoverBox from './PopoverBox';
-import assign from '../utils/assign';
 import {position, offsetLeft, offsetTop} from '../utils/offset';
 import { getXY,  clickBlank,  offClickBlank } from '../utils/triggerBlank';
 
@@ -192,7 +191,7 @@ class Popover extends Component {
         }else{
             props['onClick'] = this.onClickHandler.bind(this);
         }
-        props = assign([{...otherChild}, props]);
+        props = Object.assign({...otherChild}, props);
         let dom = React.cloneElement(child, props);
 
         return dom;
