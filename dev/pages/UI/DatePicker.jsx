@@ -36,7 +36,7 @@ class Dates extends Component {
                     <DatePicker size="xs" defaultValue="2017-03-14" visible={true} onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                     <DatePicker size="xs" defaultValue="2017" onChange={this.onChange.bind(this)} format="yyyy" />&nbsp;
                     <DatePickers size="xs" defaultValue="" onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
-                    <DatePicker size="xs" value={this.state.date} onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
+                    一秒后变化：<DatePicker size="xs" value={this.state.date} onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                     <DatePicker range="2017-03-14," size="xs" defaultValue="2017-03-14" onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                 </div>
                 <Grid className="code" width="2/2">

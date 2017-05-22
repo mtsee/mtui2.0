@@ -39,7 +39,7 @@ class PageList extends React.Component {
 
     // 跳转页面
     toPage(num){
-        if (num !== '' && num <= this.getMaxPage() && num >= 0 ) {
+        if (num !== '' && num <= this.getMaxPage() && num > 0 ) {
             this.current = num;
             this.setHtml();
             return true;

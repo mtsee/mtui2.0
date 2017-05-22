@@ -218,7 +218,8 @@ class DatePicker extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.value !== this.props.value) {
             this.setState({
-                nowDate: this.dateToOBj(nextProps.value)
+                nowDate: this.dateToOBj(nextProps.value),
+                inputDate: this.dateToOBj(nextProps.value)
             });
         }
     }
