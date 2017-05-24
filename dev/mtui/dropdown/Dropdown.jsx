@@ -99,7 +99,9 @@ class DropDown extends Component {
 
     // 更新弹窗里面的数据
     componentDidUpdate(prevProps){
-        this.renderDiv(true);
+        if(document.getElementById(this.mid)){
+            this.renderDiv(true);
+        }
     }
 
     // 初始化状态

@@ -11,7 +11,7 @@ class Dates extends Component {
         super(props);
         this.state = {
             name: '111',
-            date: '2017-03-14'
+            date: ''
         };
     }
 
@@ -35,7 +35,7 @@ class Dates extends Component {
                     <DatePicker size="xs" style={{ width: 100 }} defaultValue="" format="yyyy-mm-dd" placeholder="选择日期" />&nbsp;
                     <DatePicker size="xs" defaultValue="2017-03-14" visible={true} onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                     <DatePicker size="xs" defaultValue="2017" onChange={this.onChange.bind(this)} format="yyyy" />&nbsp;
-                    <DatePickers size="xs" defaultValue="" onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
+                    <DatePickers size="xs" defaultValue="2017-03-14/2017-03-16" onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                     一秒后变化：<DatePicker size="xs" value={this.state.date} onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                     <DatePicker range="2017-03-14," size="xs" defaultValue="2017-03-14" onChange={this.onChange.bind(this)} format="yyyy-mm-dd" />&nbsp;
                 </div>

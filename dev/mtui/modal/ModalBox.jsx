@@ -55,7 +55,7 @@ class ModalBox extends Component {
         var style = Object.assign({
             marginLeft: - (width || 600) / 2,
             marginTop: - (height || 400) / 2
-        }, this.props.style);
+        }, this.props.style || {});
         
         return <div className="mt-modal" id={this.props.mid} 
                     style={{

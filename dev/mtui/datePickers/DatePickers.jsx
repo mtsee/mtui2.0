@@ -69,7 +69,7 @@ class DatePickers extends Component {
             let style = Object.assign({
                 left: left + 460 > document.body.offsetWidth ? document.body.offsetWidth - 460 - 10 : left, // 判断left,不能超过body区域
                 top: top + height
-            }, this.props.modalStyle, { display: this.state.show ? 'block' : 'none' });
+            }, this.props.modalStyle || {}, { display: this.state.show ? 'block' : 'none' });
             let { mid, format, ...other } = this.props;
 
             let cName = ['mt-dates'];
@@ -224,7 +224,9 @@ class DatePickers extends Component {
 
     // /更新弹窗里面的数据
     componentDidUpdate(prevProps) {
-        this.renderDiv(true);
+        if(document.getElementById(this.mid)){
+            this.renderDiv(true);
+        }
     }
 
     // /渲染前，先设置 startDate 和 endDate

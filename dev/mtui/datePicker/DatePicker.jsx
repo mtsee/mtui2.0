@@ -200,7 +200,9 @@ class DatePicker extends Component {
 
     // 更新弹窗里面的数据
     componentDidUpdate(prevProps) {
-        this.renderDiv(true);
+        if(document.getElementById(this.mid)) {
+            this.renderDiv(true);
+        }
     }
 
     // 卸载组件
@@ -218,6 +220,7 @@ class DatePicker extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.value !== this.props.value) {
             this.setState({
+                clear: nextProps.value ? false : true,
                 nowDate: this.dateToOBj(nextProps.value),
                 inputDate: this.dateToOBj(nextProps.value)
             });

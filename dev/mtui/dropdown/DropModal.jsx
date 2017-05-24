@@ -24,7 +24,7 @@ class DropModal extends Component {
             }, {
                 left: left,
                 top: top + height
-            }, this.props.style);
+            }, this.props.style || {});
         }
 
         let cName = ['mt-dropdown'];

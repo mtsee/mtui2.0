@@ -31,7 +31,7 @@ class Progress extends Component {
         if(size){
             styles.width = size;
         }
-        styles = Object.assign(style,styles)
+        styles = Object.assign(style || {}, styles);
         let val = (value*100).toFixed(fixed);
         return (
             <div {...other} style={styles} className={cName.join(' ')}>

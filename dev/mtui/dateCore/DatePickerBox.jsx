@@ -250,7 +250,8 @@ class DatePickerBox extends Component {
     }
 
     // 确定
-    clickOk(str) {
+    clickOk(e, str) {
+        e.stopPropagation();
         let obj = null;
 
         // 如果是组合框
@@ -276,9 +277,9 @@ class DatePickerBox extends Component {
     }
 
     // 清除
-    clearDate() {
+    clearDate(e) {
         let self = this;
-        this.clickOk('clear');
+        this.clickOk(e, 'clear');
     }
 
     // 重新设置
@@ -345,7 +346,7 @@ class DatePickerBox extends Component {
             style = Object.assign({
                 left: left + 230 > window.innerWidth ? window.innerWidth - 230 - 10 : left, // 判断left,不能超过body区域
                 top: (top + height) + 280 > window.innerHeight ? window.innerHeight - 280 : (top + height)
-            }, this.props.modalStyle, { display: this.props.show ? 'block' : 'none' });
+            }, this.props.modalStyle || {}, { display: this.props.show ? 'block' : 'none' });
         } else {
             style = this.props.modalStyle;
         }

@@ -158,7 +158,9 @@ class Select extends Component {
         // 受控组件
         if (this.props.value || this.props.defaultValue !== undefined) {
             // console.log('受控组件', this.props.value, prevProps.value);
-            this.renderDOM(true);
+            if(document.getElementById(this.mid)) {
+                this.renderDiv(true);
+            }
         }
     }
 

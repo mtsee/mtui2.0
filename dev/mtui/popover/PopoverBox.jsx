@@ -67,7 +67,7 @@ class PopoverBox extends Component {
         var style = Object.assign(
             this.state.style, 
             {display: this.state.show ? 'block' : 'none'}, 
-            this.props.style);
+            this.props.style || {});
 
         var cName = ['mt-popover', 'animated bounceIn'];
         if(this.props.place){

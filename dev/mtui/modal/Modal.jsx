@@ -87,9 +87,11 @@ class Modal extends Component {
         });
     }
 
-    // 更新弹窗里面的数据
+    // 更新弹窗里面的数据, 如果DOM不存在，就不更新
     componentDidUpdate(prevProps){
-        this.renderDiv(true);
+        if(document.getElementById(this.mid)) {
+            this.renderDiv(true);
+        }
     }
 
     // 点击事件
