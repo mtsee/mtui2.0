@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import { formatDate, addAndDelOneMonth, getMDay, fliterNum, getDateNow, setHHMMSS, setDays, setMonths } from './dateCore';
-
+import assign from '../utils/assign';
 import DatePickerBoxDay from './DatePickerBoxDay';
 import DatePickerBoxMonth from './DatePickerBoxMonth';
 import DatePickerBoxYear from './DatePickerBoxYear';
@@ -343,10 +343,12 @@ class DatePickerBox extends Component {
         // 设置定位
         if (set) {
             let { height, left, top, width } = set;
-            style = Object.assign({
-                left: left + 230 > window.innerWidth ? window.innerWidth - 230 - 10 : left, // 判断left,不能超过body区域
-                top: (top + height) + 280 > window.innerHeight ? window.innerHeight - 280 : (top + height)
-            }, this.props.modalStyle || {}, { display: this.props.show ? 'block' : 'none' });
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            let scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+            style = assign([{
+                left: left + 230 > window.innerWidth + scrollLeft ? window.innerWidth - 230 - 10 : left, // 判断left,不能超过body区域
+                top: (top + height) + 280 > window.innerHeight + scrollTop ? window.innerHeight - 280 : (top + height)
+            }, this.props.modalStyle || {}, { display: this.props.show ? 'block' : 'none' }]);
         } else {
             style = this.props.modalStyle;
         }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import regex from './regex';
 import eventProxy from '../utils/eventProxy';
 import ReactDOM from 'react-dom';
+import assign from '../utils/assign';
 
 class Validate extends Component {
     // 构造函数
@@ -205,7 +206,7 @@ class Validate extends Component {
             this.onBlur = children.props.onBlur.bind(children);
         }
 
-        let props = Object.assign({
+        let props = assign([{
             className: cName.join(' '),
             ref: 'input',
             suffix: self.state.suffix,
@@ -213,7 +214,7 @@ class Validate extends Component {
             onFocus: self.onFocusDo.bind(self),
             onBlur: self.onBlurDo.bind(self),
             validateInfo: self.state.info ? <span className="mt-validate-info">{self.state.info}</span> : null
-        }, { ...other });
+        }, { ...other }]);
         return React.cloneElement(child, props);
     }
 }

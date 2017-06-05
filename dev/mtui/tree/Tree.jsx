@@ -1,51 +1,60 @@
 'use strict';
+import './style.scss';
 import React, { Component } from 'react';
 
 class Tree extends Component {
-    //构造函数
-    constructor (props) {
-        super(props);
-    }
 
     static defaultProps = {
-        size: '' //默认, min
+        show: true
+    }
+
+    // 构造函数
+    constructor (props) {
+        super(props);
+        this.state = {
+            show: props.show
+        };
+        this.refBody = null;
+    }
+
+    clickHeader = (e) => {
+        this.setState({
+            show: !this.state.show
+        });
     }
 
     //
     render(){
-        const {className,children,size,header, ...other} = this.props;
-        let cName = [];
-        if(size){
-            cName.push('mt-panle-'+size)
-        }else{
-            cName.push('mt-panle')
-        }
-
+        const {className, children, header, show, ...other} = this.props;
+        let cName = ['mt-tree'];
         if(className){
-            cName.push(className)
+            cName.push(className);
         }
-
         return (
             <div {...other} className={cName.join(' ')}>
-                <h3 className="mt-panle-h2">{this.props.header}</h3>
-                  <div className="mt-panle-box">
-                      {children}
-                  </div>
+                { header ? <div className="mt-tree-header" onClick={ this.clickHeader}>
+                    { !this.state.show ? <i className="iconfont icon-you"></i> : <i className="iconfont icon-xia"></i> }{header}</div> : null 
+                }
+                <div className="mt-tree-body" style={{display: this.state.show ? 'block' : 'none'}}>
+                    {children}
+                </div>
             </div>	
         );
     }
 }
 
 class TreeChild extends Component {
-    //构造函数
+    // 构造函数
     constructor (props) {
         super(props);
     }
 
     render(){
-        <div>{this.props.children}</div>
+        return <div className="mt-tree-child">{this.props.children}</div>;
     }
 }
 
-//主页
+Tree.TreeChild = TreeChild;
+
+// 主页
 export default Tree;

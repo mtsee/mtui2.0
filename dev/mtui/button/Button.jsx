@@ -1,6 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import { offsetLeft, offsetTop } from '../utils/offset';
+import assign from '../utils/assign';
 
 class Button extends Component {
     // 构造函数
@@ -106,14 +107,14 @@ class Button extends Component {
         }
 
         let styles = style || {};
-        styles = Object.assign({
+        styles = assign([{
             width: ( htmlType === 'submit' && block ) ? '100%' : 'auto'
-        }, styles);
+        }, styles]);
 
         return (
             <Dom style={styles} onClick={this.clickEvent.bind(this)} {...other} className={arr.join(' ')}>
                 {prefix ? <span className="mt-button-prefix">{prefix}</span> : null}
-                {children}
+                <span>{children}</span>
                 {suffix ? <span className="mt-button-suffix">{suffix}</span> : null}
                 {
                     this.state.inks.map(function (elem, index) {

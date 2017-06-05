@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {position} from '../utils/offset';
+import assign from '../utils/assign';
 
 class PopoverBox extends Component {
 
@@ -13,6 +14,7 @@ class PopoverBox extends Component {
             show: false,
             style: {}
         };
+        this.refPopover = null;
     }
 
     closeModal(){
@@ -23,7 +25,7 @@ class PopoverBox extends Component {
     setStyle(){
         let obj = {};
         let btn = this.props.getPlace();
-        let popover = position(this.refs.popover);
+        let popover = position(this.refPopover);
         let wid = 8; // 箭头的尺寸
         // console.log('popover',popover)
         if(this.props.place === 'top'){
@@ -64,10 +66,10 @@ class PopoverBox extends Component {
     }
 
     render(){
-        var style = Object.assign(
+        var style = assign([
             this.state.style, 
             {display: this.state.show ? 'block' : 'none'}, 
-            this.props.style || {});
+            this.props.style || {}]);
 
         var cName = ['mt-popover', 'animated bounceIn'];
         if(this.props.place){
@@ -77,7 +79,7 @@ class PopoverBox extends Component {
             cName.push(this.props.className);
         }
 
-        return <div id={this.props.mid} ref="popover" className={cName.join(' ')} style={style}>
+        return <div id={this.props.mid} ref={ c => { this.refPopover = c;}} className={cName.join(' ')} style={style}>
                     {this.props.content}
                     <div className="mt-popover-arrow"></div>
                </div>;

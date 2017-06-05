@@ -7179,35 +7179,10 @@ label {
 * @type MTUI2.0
 * @author : Mantou
 */
-.mt-panle, .mt-panle-min {
-  background: #fff;
-  padding: 20px; }
-  .mt-panle .mt-panle-h1, .mt-panle-min .mt-panle-h1, .mt-panle .mt-panle-h2, .mt-panle-min .mt-panle-h2, .mt-panle .mt-panle-h3, .mt-panle-min .mt-panle-h3 {
-    padding-bottom: 20px;
-    font-size: 18px;
-    color: #838FA1;
-    border-bottom: 1px solid #eef1f5; }
-  .mt-panle .mt-panle-h2, .mt-panle-min .mt-panle-h2 {
-    font-size: 16px; }
-  .mt-panle .mt-panle-h3, .mt-panle-min .mt-panle-h3 {
-    font-size: 14px; }
-  .mt-panle .mt-panle-box, .mt-panle-min .mt-panle-box {
-    margin-top: 20px;
-    color: #838FA1; }
-
-.mt-panle-min {
-  padding: 10px; }
-  .mt-panle-min .mt-panle-h1, .mt-panle-min .mt-panle-h2, .mt-panle-min .mt-panle-h3 {
-    font-size: 16px;
-    padding-bottom: 10px; }
-  .mt-panle-min .mt-panle-h2 {
-    font-size: 14px; }
-  .mt-panle-min .mt-panle-h3 {
-    font-size: 12px; }
-  .mt-panle-min .mt-panle-box {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #838FA1; }
+.mt-tree {
+  display: inline-block; }
+  .mt-tree .mt-tree-child {
+    margin-left: 20px; }
 
 /**
 *	验证

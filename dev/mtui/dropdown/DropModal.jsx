@@ -1,6 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import assign from '../utils/assign';
 
 class DropModal extends Component {
 
@@ -19,12 +20,12 @@ class DropModal extends Component {
                 left = left + this.props.style.width > document.body.offsetWidth ? document.body.offsetWidth - this.props.style.width - 10 :  left; // 判断left,不能超过body区域
             }
 
-            var style = Object.assign({
+            var style = assign([{
                 display: this.props.show ? 'block' : 'none'
             }, {
                 left: left,
                 top: top + height
-            }, this.props.style || {});
+            }, this.props.style || {}]);
         }
 
         let cName = ['mt-dropdown'];

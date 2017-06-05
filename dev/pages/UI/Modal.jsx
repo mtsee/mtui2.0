@@ -5,22 +5,31 @@ import React, { Component } from 'react';
 import {Modal, Grid, Button, DatePicker, Popover} from '../../mtui/index'
 
 class UI extends Component {
-    //构造函数
+    // 构造函数
     constructor (props) {
         super(props);
         this.state = {
-            name : '111'
-        }
+            name: '111',
+            arr: [0, 0, 0]
+        };
+        this.modalID2 = null;
+    }
+
+    addArr = () => {
+        this.state.arr.push(0);
+        this.setState({
+            arr: this.state.arr
+        });
     }
 
     showBack() {
-        console.log('弹窗开启，2秒后，自动变化值！')
+        console.log('弹窗开启，2秒后，自动变化值！');
         var _this = this;
         setTimeout(function(){
             _this.setState({
                 name: '2222'
             });
-        }, 2000)  
+        }, 2000);
     }
 
     closeBack(){
@@ -28,7 +37,7 @@ class UI extends Component {
     }
 
     showOrHide(){
-        this.refs.modalID2.showModal(true);
+        this.modalID2.showModal(true);
     }
 
     render(){
@@ -43,15 +52,15 @@ class UI extends Component {
                         </div>
                     </Modal>
                     &nbsp;
-                     <Modal ref="modalID2" modalClassName="animated bounceInDown" style={{width:200, height:180, overflow: 'auto'}} showBack={this.showBack.bind(this)} closeBack={this.closeBack.bind(this)}>
+                     <Modal ref={(c) => { this.modalID2 = c; }} style={{width:200, height:180}}>
                         <div className="mt-panel-min">
-                            <div className="mt-panel-h2">标题</div>
-                            <div className="mt-panel-box">
-                                <div style={{ height: 200}}></div>
-                                <DatePicker size="xs" style={{ width: 100 }} defaultValue="" format="yyyy-mm-dd" placeholder="选择日期" />
-                                <Popover show={this.state.show} trigger="click" content={'就是一个小提示！'} place="top">
-                                    <Button type="info">click弹窗在上</Button>
-                                </Popover>
+                            <div className="mt-panel-h2" onClick={ this.addArr }>标题</div>
+                            <div className="mt-panel-box" style={{height: 100, overflow: 'auto'}}>
+                                {
+                                    this.state.arr.map((elem, index) => {
+                                        return <li style={{marginBottom: 20}} key={index}><DatePicker size="xs" style={{ width: 100 }} defaultValue="" format="yyyy-mm-dd" placeholder="选择日期" /></li>;
+                                    })
+                                }
                             </div>
                         </div>
                     </Modal>

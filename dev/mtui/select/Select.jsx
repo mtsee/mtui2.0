@@ -6,6 +6,7 @@ import { closest } from '../utils/select';
 import { position } from '../utils/offset';
 import { toArray } from '../utils/toArray';
 import { clickBlank, offClickBlank } from '../utils/triggerBlank';
+import assign from '../utils/assign';
 
 class Select extends Component {
 
@@ -267,7 +268,7 @@ class Select extends Component {
             styles['display'] = block ? 'block' : 'inline-block';
         }
         if (styles) {
-            styles = Object.assign(style || {}, styles);
+            styles = assign([style || {}, styles]);
         }
 
         return <div

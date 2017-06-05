@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import PopoverBox from './PopoverBox';
 import {position, offsetLeft, offsetTop} from '../utils/offset';
 import { getXY,  clickBlank,  offClickBlank } from '../utils/triggerBlank';
+import assign from '../utils/assign';
 
 class Popover extends Component {
 
@@ -96,6 +97,9 @@ class Popover extends Component {
     // 鼠标进入
     onMouseHandler(e){
 
+        e.stopPropagation();
+        e.preventDefault();
+        
         if(!this.state.show){
             this.showOrHide(e, true);
         }
@@ -191,7 +195,7 @@ class Popover extends Component {
         }else{
             props['onClick'] = this.onClickHandler.bind(this);
         }
-        props = Object.assign({...otherChild}, props);
+        props = assign([{...otherChild}, props]);
         let dom = React.cloneElement(child, props);
 
         return dom;

@@ -21,7 +21,8 @@ function clickBlank(obj, callback, events, _btn, onlybtn){
     // 点击事件
     var handler = function(e){
         let modal = getXY(obj);
-        let y = e.clientY + document.body.scrollTop;
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let y = e.clientY + scrollTop || 0;
 
         // 如果是hover
         let btn = null, btnJudge = false;

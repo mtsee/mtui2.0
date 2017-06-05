@@ -2,6 +2,7 @@
 import React,  { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { toArray } from '../utils/toArray';
+import assign from '../utils/assign';
 
 class SelectModal extends Component {
 
@@ -43,7 +44,7 @@ class SelectModal extends Component {
         let modalStyle = this.props.modalStyle || {};
         if(set){
             var {height, left, top, width} = set;
-            var style = Object.assign({
+            var style = assign([{
                 display: this.props.show ? 'block' : 'none'
             }, {
                 left: left, 
@@ -52,7 +53,7 @@ class SelectModal extends Component {
                 width: this.props.modalWidth
             }, {
                 height: 'auto'
-            }, modalStyle);
+            }, modalStyle]);
         }
         var self = this;
         var cName = ['mt-select', this.state.cName]; // mt-select-ie10

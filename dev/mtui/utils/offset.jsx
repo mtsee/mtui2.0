@@ -2,39 +2,27 @@
 * @type 获取dom 行对body的left
 * @author : Mantou
 */
-function offset(self, obj){
-    if(!obj){
-        obj = {};
-        obj.left = 0;
-        obj.top = 0;
-    }
-    while(self){
-        obj.left += self.offsetLeft - (self.scrollLeft || 0);
-        obj.top += self.offsetTop - (self.scrollTop || 0);
-        self = self.offsetParent;
-    }
-    obj.top += document.body.scrollTop;
-    return obj;
+function offsetLeft(dom) {
+    return dom.getBoundingClientRect().left;
 }
 
-function offsetLeft(self) {
-    return offset(self).left;
-}
-
-function offsetTop(self) {
-    return offset(self).top;
+function offsetTop(dom) {
+    return dom.getBoundingClientRect().top;
 }
 
 function position(dom){
-    if(!dom){
-        return;
+    if(!dom || typeof dom !== 'object'){
+        return false;
     }
+    let rect = dom.getBoundingClientRect();
+    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    let scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
     return {
-        left: offsetLeft(dom),
-        top: offsetTop(dom),
+        left: rect.left + (scrollLeft || 0),
+        top: rect.top + (scrollTop || 0),
         width: dom.offsetWidth,
         height: dom.offsetHeight
     };
 }
 
-export {offsetTop, offsetLeft, offset, position};
+export {offsetTop, offsetLeft, position};

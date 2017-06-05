@@ -15,11 +15,10 @@ class Header extends Component {
             <div className="menus">
                 <div className="btns">
                     <Link to={HOME}><i>首页</i></Link>
-                    <Link className="active" to={HOME + "/ui/input"}><i>UI组件</i></Link>
-                    <Link to={HOME + "/ui/redux"}><i>Redux案例</i></Link>
                     <Link to={HOME + "/help"}><i>帮助</i></Link>
                     <Link className="update" to={HOME + "/update"}><i>更新</i></Link>
-                    <a target="blank" href="https://git.oschina.net/676015863/mtui2.0"><i>oschina</i></a>
+                    <Link className="active" to={HOME + "/ui/input"}><i>UI组件</i></Link>
+                    <Link to={HOME + "/ui/redux"}><i>Redux案例</i></Link>
                     <a target="blank" href="https://github.com/mtsee/mtui2.0"><i>Github</i></a>
                 </div>
             </div>

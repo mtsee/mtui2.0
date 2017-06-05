@@ -1,5 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
+import assign from '../utils/assign';
 
 class Progress extends Component {
     //构造函数
@@ -31,8 +32,8 @@ class Progress extends Component {
         if(size){
             styles.width = size;
         }
-        styles = Object.assign(style || {}, styles);
-        let val = (value*100).toFixed(fixed);
+        styles = assign([style || {}, styles]);
+        let val = (value * 100).toFixed(fixed);
         return (
             <div {...other} style={styles} className={cName.join(' ')}>
                 <div className="mt-progress-text">{val==='0' ? 0 : val+'%'}</div>
