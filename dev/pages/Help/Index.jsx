@@ -55,7 +55,7 @@ npm install
 开发 npm start
 构建 npm run build
 
-浏览器输入：127.0.0.1:3001
+浏览器输入：127.0.0.1:4001
 						`
 					}
 </code></pre>
