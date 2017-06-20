@@ -20,7 +20,9 @@ function weekNumber(y, m, d) {
     wk = (y - 1 + (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400 + d) % 7;
     // console.log();
     // 0对应星期天，1对应星期一 0，1，2，3，4，5，6
-    return parseInt(wk, 10) + 1;
+    wk = Math.round(wk, 10);
+    wk = (wk === 7 ? 0 : wk);
+    return Math.round(wk, 10);
 }
 
 // 加，减一个月,返回对应的 y ，m
