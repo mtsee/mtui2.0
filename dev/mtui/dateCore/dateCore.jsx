@@ -18,8 +18,9 @@ function weekNumber(y, m, d) {
     }
     /* 根据日期计算星期的公式 */
     wk = (y - 1 + (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400 + d) % 7;
-    // 0对应星期天，1对应星期一 
-    return parseInt(wk, 10);
+    // console.log();
+    // 0对应星期天，1对应星期一 0，1，2，3，4，5，6
+    return parseInt(wk, 10) + 1;
 }
 
 // 加，减一个月,返回对应的 y ，m
