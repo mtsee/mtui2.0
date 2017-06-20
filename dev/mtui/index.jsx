@@ -12,7 +12,7 @@ import Modal from './modal/Modal';
 import Dropdown from './dropDown/Dropdown';
 import Select from './select/Select';
 import BackTop from './backtop/BackTop';
-import Tabs from './tabs/Tabs';
+import Tabs from './tab/Tabs';
 import DatePicker from './datePicker/DatePicker';
 import DatePickers from './datePickers/DatePickers';
 import Switch from './switch/Switch';
@@ -23,7 +23,7 @@ import Slider from './slider/Slider';
 import SliderBar from './sliderBar/SliderBar';
 import Tree from './tree/Tree';
 import Validate from './validate/Validate';
-import Swiper from './swiper/Swiper';
+import Swiper from './swipers/Swiper';
 import Collapse from './collapse/Collapse';
 import Popover from './popover/Popover';
 import Popconfirm from './popconfirm/Popconfirm';
@@ -34,7 +34,7 @@ import LoadingBox from './loadingBox/LoadingBox';
 import LoadingModal from './loadingModal/LoadingModal';
 
 // 工具
-import Tip from './tip/Tip';
+import Tip from './tips/Tip';
 
 // 配置信息
 export {
