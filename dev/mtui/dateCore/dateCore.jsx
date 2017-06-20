@@ -13,7 +13,7 @@ function weekNumber(y, m, d) {
     var wk;
     if (m <= 12 && m >= 1) {
         for (var i = 1; i < m; ++i) {
-            d += getMDay(y, i); // 
+            d += getMDay(y, i);
         }
     }
     /* 根据日期计算星期的公式 */
@@ -21,7 +21,7 @@ function weekNumber(y, m, d) {
     // console.log();
     // 0对应星期天，1对应星期一 0，1，2，3，4，5，6
     wk = Math.round(wk, 10);
-    wk = (wk === 7 ? 0 : wk);
+    // wk = (wk === 7 ? 0 : wk);
     return Math.round(wk, 10);
 }
 
