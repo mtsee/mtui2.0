@@ -16,16 +16,16 @@ function weekNumber(y, m, d) {
             d += getMDay(y, i); // 
         }
     }
-    /*根据日期计算星期的公式*/
+    /* 根据日期计算星期的公式 */
     wk = (y - 1 + (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400 + d) % 7;
     // 0对应星期天，1对应星期一 
-    return parseInt(wk);
+    return parseInt(wk, 10);
 }
 
 // 加，减一个月,返回对应的 y ，m
 function addAndDelOneMonth(y, m, mark) {
-    y = parseInt(y, 10)
-    m = parseInt(m, 10)
+    y = parseInt(y, 10);
+    m = parseInt(m, 10);
     // 加一个月
     if (mark == 'add') {
         if (m != 12) {
@@ -66,9 +66,9 @@ function setHHMMSS() {
     var setArr = function (arr, max) {
         for (let i = 0; i < max; i++) {
             if (i < 10) {
-                arr.push('0' + i)
+                arr.push('0' + i);
             } else {
-                arr.push(i.toString())
+                arr.push(i.toString());
             }
         }
     }
