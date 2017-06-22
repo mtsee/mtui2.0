@@ -9,7 +9,7 @@ import Button from './button/Button';
 import Input from './input/Input';
 import PageList from './pagelist/PageList';
 import Modal from './modal/Modal';
-import Dropdown from './dropDown/Dropdown';
+import Dropdown from './dropdown/Dropdown';
 import Select from './select/Select';
 import BackTop from './backtop/BackTop';
 import Tabs from './tab/Tabs';
