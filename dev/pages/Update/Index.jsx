@@ -17,6 +17,7 @@ class Update extends Component {
 				<IndexHeader />
 				<div className="list">
 					<ul>
+						<li><i>2017-06-28</i> 添加了Input type="textarea" 的支持</li>
 						<li><i>2017-06-05</i> 修改了 utils/offset.jsx 里面的获取DOM的宽和高有误，导致弹窗定位不准确的问题</li>
 						<li><i>2017-05-24</i> 修改所有弹窗的componentDidUpdate数据更新方法，如果DOM不存在，就不更新数据，只在初次渲染后，才会去更新数据。</li>
 						<li><i>2017-05-22</i> 修改了日历组件 value 变化无效的问题。</li>

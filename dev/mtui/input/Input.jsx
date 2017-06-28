@@ -64,7 +64,7 @@ class Input extends Component {
     }
 
     render(){
-        const {size, prefix, block, suffix, onPressEnter, className, validateInfo, onChange, defaultValue, value, disabled, ...other} = this.props;
+        const {size, prefix, block, suffix, type, onPressEnter, className, validateInfo, onChange, defaultValue, value, disabled, ...other} = this.props;
 
         let cName = ['mt-input'];
         if(className){
@@ -101,7 +101,7 @@ class Input extends Component {
         return (
             <span style={style} className={cName.join(' ')}>
                 {prefix ? <span className="mt-input-prefix">{prefix}</span> : null}
-                <input disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/>
+                {type === 'textarea' ? <textarea disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/> : <input disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/>}
                 {suffix ? <span className="mt-input-suffix">{suffix}</span> : null}
                 {validateInfo}
             </span>
