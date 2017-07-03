@@ -101,7 +101,7 @@ class Input extends Component {
         return (
             <span style={style} className={cName.join(' ')}>
                 {prefix ? <span className="mt-input-prefix">{prefix}</span> : null}
-                {type === 'textarea' ? <textarea disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/> : <input disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/>}
+                {type === 'textarea' ? <textarea disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/> : <input type={type} disabled={disabled} {...obj} {...other} onChange={this.onChange.bind(this)}/>}
                 {suffix ? <span className="mt-input-suffix">{suffix}</span> : null}
                 {validateInfo}
             </span>

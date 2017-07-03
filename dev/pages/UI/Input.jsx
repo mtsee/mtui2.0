@@ -37,6 +37,7 @@ class Dom extends Component {
 	          			<Input placeholder="size:nm" size="nm"/>&nbsp;
 	          			<Input placeholder="size:sm" size="sm"/>&nbsp;
 	          			<Input placeholder="size:xs" size="xs"/>&nbsp;
+	          			<Input placeholder="密码" type="password" size="xs"/>&nbsp;
 	          			<Input type="textarea" placeholder="textarea"/>&nbsp;
 	          		</Grid>
 	          		<br/>

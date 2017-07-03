@@ -11,10 +11,13 @@
 	vertical-align: middle;
 	position: relative;
 	background: #fff;
-	input{
+	input, textarea{
 		border:0;
 		height: 20px;
 		width: 100%;
+	}
+	textarea{
+		height: auto;
 	}
 }
 .mt-input-disabled{

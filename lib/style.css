@@ -6317,10 +6317,12 @@ label {
   vertical-align: middle;
   position: relative;
   background: #fff; }
-  .mt-input input {
+  .mt-input input, .mt-input textarea {
     border: 0;
     height: 20px;
     width: 100%; }
+  .mt-input textarea {
+    height: auto; }
 
 .mt-input-disabled {
   background-color: #ededed;
