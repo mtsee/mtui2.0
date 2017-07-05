@@ -1,5 +1,5 @@
 /*ui CSS*/
-.ui{}
+.ui .btnw{ width: 200px;}
 .ui .mt-panel,.ui .mt-panel-min{
 	margin-bottom:20px;
 }
@@ -51,4 +51,44 @@
 			vertical-align: middle;
 		}
 	}
+}
+
+.max-pre-code{
+	max-width: 500px;
+	overflow: auto;
+}
+
+.api{
+	margin-top: 20px;
+	.apispan{
+		font-size: 16px;
+		margin-top: 20px;
+		margin-right: 10px;
+		color: #333;
+	}
+	.tips{
+		padding: 10px 0;
+		color: #ff9b00;
+		.tipspan{
+			display: inline-block;
+			padding: 2px 8px;
+			border-radius: 100px;
+			background: #ff9b00;
+			color: #fff;
+			font-size: 12px;
+			margin-right: 10px;
+		}
+	}
+	.mt-table{
+		th{
+			background: #f1f1f1;
+		}
+		th:nth-of-type(2){
+			width: 500px;
+		}
+		td{
+			color: #666;
+			font-size: 13px;
+		}
+	} 
 }

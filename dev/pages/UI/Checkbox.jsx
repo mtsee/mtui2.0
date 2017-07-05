@@ -2,19 +2,19 @@
 
 import './style.scss';
 import React, { Component } from 'react';
-import {Grid,Button,Checkbox} from '../../mtui/index'
+import {Grid, Button, Checkbox} from '../../mtui/index';
 
 const CheckboxGroup = Checkbox.CheckboxGroup;
 
 class Dom extends Component {
-    //构造函数
+    // 构造函数
     constructor (props) {
         super(props);
         this.state = {
-            checked : true,
+            checked: true,
             value: [2],
-            allValue:[2,4]
-        }
+            allValue: [2, 4]
+        };
     }
 
     onChange(data){
@@ -22,41 +22,41 @@ class Dom extends Component {
 
         this.setState({
             checked: data
-        })
+        });
     }
 
     onChangeGroup(data){
-        console.log('不受控组件',data)
+        console.log('不受控组件', data);
     }
 
     onChangeGroupSK(data){
-        console.log('受控组件',data)
+        console.log('受控组件', data);
         this.setState({
-            value:data
-        })
+            value: data
+        });
     }
 
     onChangeAll(data){
-        console.log(data)
+        console.log(data);
 
         if(data){
             this.setState({
-                allValue:[1,2,3,4]
-            })
+                allValue: [1, 2, 3, 4]
+            });
         }else{
             this.setState({
-                allValue:[]
-            })
+                allValue: []
+            });
         }
     }
 
     onChangeGroupSKAll(data){
         this.setState({
-            allValue:data
-        })
+            allValue: data
+        });
     }
 
-    //默认参数
+    // 默认参数
     defaultChecked(){
         console.log(this.refs.defaultChecked.getValue());
     }
@@ -65,10 +65,10 @@ class Dom extends Component {
 
         let checkAll = null;
 
-        if(this.state.allValue.length == 4){
-            checkAll = true
-        }else if(this.state.allValue.length == 0){
-            checkAll = false
+        if(this.state.allValue.length === 4){
+            checkAll = true;
+        }else if(this.state.allValue.length === 0){
+            checkAll = false;
         }else{
             checkAll = 'other';
         }
@@ -129,6 +129,43 @@ class Dom extends Component {
                         </CheckboxGroup>
                     </Grid>
                     <Grid>
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style 继承原来的标签默认
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>checked</td>
+                <td>选择框的状态 true/false/other，如果是other表示半选中状态</td>
+                <td>string</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>选择框的值</td>
+                <td>anything</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>type（CheckboxGroup参数）</td>
+                <td>选择框的类型,可以是按钮， 参数：button, checkbox</td>
+                <td>string</td>
+                <td>checkbox</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pre>
 <code>
 {`

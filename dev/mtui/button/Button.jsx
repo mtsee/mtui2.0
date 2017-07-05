@@ -13,9 +13,9 @@ class Button extends Component {
     }
 
     static defaultProps = {
-        size: '', // 默认 lg,sm,xs
+        size: null, // 默认 lg,sm,xs
         type: 'default', // default,primary,success,info,warning,danger
-        block: '', // block
+        block: false, // true
         dom: 'a',
         disabled: false,
         prefix: null, // 前面的图标
@@ -103,12 +103,12 @@ class Button extends Component {
         }
 
         if (htmlType === 'submit') {
-            Dom = 'Button';
+            Dom = 'button';
         }
 
         let styles = style || {};
         styles = assign([{
-            width: ( htmlType === 'submit' && block ) ? '100%' : 'auto'
+            width: ( htmlType === 'submit' && block ) ? '100%' : ''
         }, styles]);
 
         return (

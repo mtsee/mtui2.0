@@ -28,6 +28,43 @@ class UI extends Component {
 						</CollapseItem>
 					</Collapse>
 				</Grid>
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style 等默认属性继承DIV标签默认
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Collapse: only</td>
+                <td>是否每次只展示一个选项卡，点击的时候，其他关闭</td>
+                <td>bool</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>CollapseItem: header</td>
+                <td>item的标题</td>
+                <td>Component</td>
+                <td>''</td>
+            </tr>
+			<tr>
+                <td>CollapseItem: show</td>
+                <td>是否默认显示</td>
+                <td>bool</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 				<pre><code>
 				{`
 'use strict';

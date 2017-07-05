@@ -103,6 +103,67 @@ class UI extends Component {
                     <Button size="sm" type="success" onClick={this.setValue.bind(this)}>设置select的值</Button>
                 </div>
                 <Grid className="code" width="2/2">
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style, placeholder, defaultValue, value 继承原来的标签默认
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>visible</td>
+                <td>默认显示状态 true/false</td>
+                <td>bool</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>showBack</td>
+                <td>显示的回调函数</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>onChange</td>
+                <td>选择值后的回调函数 callback(e, data)</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>trigger</td>
+                <td>交互方式 ，可用参数 hover/click</td>
+                <td>string</td>
+                <td>click</td>
+            </tr>
+            <tr>
+                <td>prefix</td>
+                <td>前面的图标，参数可以是一个字体图标{'<i className="iconfont ico-user"></i>'}</td>
+                <td>Component</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>suffix</td>
+                <td>后面的图标，参数可以是一个字体图标{'<i className="iconfont ico-search"></i>'}</td>
+                <td>Component</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>validateInfo</td>
+                <td>表单验证的提示图标，或者DIV</td>
+                <td>Component</td>
+                <td>null</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pre>
 <code>
 {`

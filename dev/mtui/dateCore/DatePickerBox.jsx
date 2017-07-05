@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { formatDate, addAndDelOneMonth, getMDay, fliterNum, getDateNow, setHHMMSS, setDays, setMonths } from './dateCore';
 import assign from '../utils/assign';
+import { outWindow } from '../utils/outWindow';
 import DatePickerBoxDay from './DatePickerBoxDay';
 import DatePickerBoxMonth from './DatePickerBoxMonth';
 import DatePickerBoxYear from './DatePickerBoxYear';
@@ -343,18 +344,19 @@ class DatePickerBox extends Component {
         // 设置定位
         if (set) {
             let { height, left, top, width } = set;
-            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            let scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+            // 计算临界值，重新设置left,top
+            let out = outWindow(width, height, top, left, {width: 230, height: 280});
             style = assign([{
-                left: left + 230 > window.innerWidth + scrollLeft ? window.innerWidth - 230 - 10 : left, // 判断left,不能超过body区域
-                top: (top + height) + 280 > window.innerHeight + scrollTop ? window.innerHeight - 280 : (top + height)
-            }, this.props.modalStyle || {}, { display: this.props.show ? 'block' : 'none' }]);
+                left: out.left,
+                top: out.top
+            }, this.props.modalStyle, { display: this.props.show ? 'block' : 'none' }]);
         } else {
             style = this.props.modalStyle;
         }
 
-        if (this.props.modalClassName) {
-            cName.push(this.props.modalClassName);
+        if (this.props.modalClass) {
+            cName.push(this.props.modalClass);
         }
 
         return <div className={cName.join(' ')} id={this.props.mid} style={style}>

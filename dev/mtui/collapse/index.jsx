@@ -1,3 +1,3 @@
-import Checkbox from './Checkbox';
+import Collapse from './Collapse';
 
-export default Checkbox;
+export default Collapse;

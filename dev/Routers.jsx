@@ -23,6 +23,7 @@ import SliderDom from './pages/UI/Slider'
 import SliderBarDom from './pages/UI/SliderBar'
 import SelectDom from './pages/UI/Select'
 import RadioDom from './pages/UI/Radio'
+import TimePickerDom from './pages/UI/TimePicker'
 import DatePickerDom from './pages/UI/DatePicker'
 import CheckboxDom from './pages/UI/Checkbox'
 import GridDom from './pages/UI/Grid'
@@ -75,6 +76,7 @@ class Routers extends Component{
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"radio"} component={RadioDom}/>
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"checkbox"} component={CheckboxDom}/>
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"datepicker"} component={DatePickerDom}/>
+			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"timepicker"} component={TimePickerDom}/>
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"grid"} component={GridDom}/>
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"panel"} component={PanelDom}/>
 			          <Route onEnter={this.enterPath} onLeave={this.leavePath} path={"pagelist"} component={PageListDom}/>

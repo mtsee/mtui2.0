@@ -66,6 +66,37 @@ class UI extends Component {
                     </Modal>
 
                     <Button onClick={this.showOrHide.bind(this)}>点击我控制弹窗</Button>
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style 等继承DIV
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>showBack</td>
+                <td>显示弹窗的回调函数</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>closeBack</td>
+                <td>关闭弹窗的回调函数</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pre>
 <code>
 {`

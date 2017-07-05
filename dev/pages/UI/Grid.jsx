@@ -64,6 +64,84 @@ class UI extends Component {
 	        			<Grid sm="1/1" md="1/2" lg="1/4" offset="1/12"><Button block={true} type="info">栅格</Button></Grid>
 	        		</div>
 	        		<div>
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style, 继承DOM标签默认
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+                <td>响应式参数说明</td>
+                <td>
+					width: 正常 <br/>
+					sm: 小于等于640px 生效 <br/>
+					md: 大于640px 且 小于等于1024px 生效 <br/>
+					lg: 大于1024px 生效
+				</td>
+                <td>string</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>sm</td>
+                <td>屏幕宽度小于640px 生效， 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>1/1</td>
+            </tr>
+			<tr>
+                <td>md</td>
+                <td>大于640px 且 小于等于1024px 生效， 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>1/1</td>
+            </tr>
+			<tr>
+                <td>lg</td>
+                <td>大于1024px 生效， 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>1/1</td>
+            </tr>
+			<tr>
+                <td>smOffset</td>
+                <td>屏幕宽度小于640px 生效，左偏移宽度， 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>mdOffset</td>
+                <td>大于640px 且 小于等于1024px 生效，左偏移宽度, 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>lgOffset</td>
+                <td>大于1024px 生效，左偏移宽度, 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>offset</td>
+                <td>正常左偏移宽度, 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>width</td>
+                <td>正常宽度, 参数 n/m  n和m 都是数字 eg: 1/2 </td>
+                <td>string</td>
+                <td>1/1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pre>
 <code>
 {`

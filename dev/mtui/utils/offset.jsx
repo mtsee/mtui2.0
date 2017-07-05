@@ -2,15 +2,15 @@
 * @type 获取dom 行对body的left
 * @author : Mantou
 */
-function offsetLeft(dom) {
+export function offsetLeft(dom) {
     return dom.getBoundingClientRect().left;
 }
 
-function offsetTop(dom) {
+export function offsetTop(dom) {
     return dom.getBoundingClientRect().top;
 }
 
-function position(dom){
+export function position(dom){
     if(!dom || typeof dom !== 'object'){
         return false;
     }
@@ -24,5 +24,3 @@ function position(dom){
         height: dom.offsetHeight
     };
 }
-
-export {offsetTop, offsetLeft, position};

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import assign from '../utils/assign';
+import { outWindow } from '../utils/outWindow';
 
 class DropModal extends Component {
 
@@ -16,15 +17,16 @@ class DropModal extends Component {
             var {height, left, top, width} = set;
 
             // 设置 left
-            if(this.props.style.width){
-                left = left + this.props.style.width > document.body.offsetWidth ? document.body.offsetWidth - this.props.style.width - 10 :  left; // 判断left,不能超过body区域
-            }
+            let out = outWindow(width, height, top, left, {
+                width: this.props.style.width || this.props.width,
+                height: this.props.style.height || 0
+            });
 
             var style = assign([{
                 display: this.props.show ? 'block' : 'none'
             }, {
-                left: left,
-                top: top + height
+                left: out.left,
+                top: out.top
             }, this.props.style || {}]);
         }
 

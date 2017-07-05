@@ -16,7 +16,7 @@ class BackTop extends Component {
         super(props);
         this.state = {
             show: false
-        }
+        };
         this.timer = null;
         this.scrollEventHand = null;
     }

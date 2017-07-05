@@ -13,12 +13,11 @@ class UI extends Component {
     render(){
         return (
             <Panel header="Tag">
-                
-                <pre><code>
-                {`
-                    ...
-                `}
-                </code></pre>
+<pre><code>
+{`
+作者很懒，还没来得及做...
+`}
+</code></pre>
             </Panel>	
         );
     }

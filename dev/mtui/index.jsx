@@ -13,6 +13,7 @@ import Dropdown from './dropdown/Dropdown';
 import Select from './select/Select';
 import BackTop from './backtop/BackTop';
 import Tabs from './tab/Tabs';
+import TimePicker from './timePicker/TimePicker';
 import DatePicker from './datePicker/DatePicker';
 import DatePickers from './datePickers/DatePickers';
 import Switch from './switch/Switch';
@@ -48,6 +49,7 @@ export {
     Select,
     BackTop,
     Tabs,
+    TimePicker,
     DatePicker,
     DatePickers,
     Switch,

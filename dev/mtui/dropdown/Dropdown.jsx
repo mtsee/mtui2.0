@@ -2,6 +2,7 @@
 
 import React,  { Component } from 'react';
 import ReactDOM from 'react-dom';
+// import { render } from 'react-dom';
 import DropModal from './DropModal';
 import {position} from '../utils/offset';
 import { clickBlank,  offClickBlank } from '../utils/triggerBlank';
@@ -53,6 +54,7 @@ class DropDown extends Component {
             if( !mark ){
                 document.body.appendChild(this.div);
             }
+            // console.log(ReactDOM);
             ReactDOM.render(<DropModal mid={this.mid}  getPlace={this.getPlace.bind(this)} show={this.state.show} {...this.props}/>, this.div);
         }
     }
@@ -116,11 +118,17 @@ class DropDown extends Component {
         if(this.props.trigger === 'hover'){
             const self = this;
 
+            // hover 事件
             this.hoverHandler = function(e){
+                // 如果显示，不再继续显示
+                if(self.state.show) {
+                    return;
+                }
                 self.showOrHide(false, function(){
                     if(self.handler){
                         offClickBlank(self.handler, 'mousemove');
                     }
+                    // 点击其他区域，隐藏
                     self.handler = clickBlank(document.getElementById(self.mid), function(mark){
                         if(!mark){
                             self.showOrHide(true, null);
@@ -129,6 +137,8 @@ class DropDown extends Component {
                     }, 'mousemove', self.refBtn);
                 });
             };
+
+            // 绑定 hover
             this.refBtn.addEventListener('mouseover', this.hoverHandler);
         }
     }
@@ -137,10 +147,10 @@ class DropDown extends Component {
     componentWillUnmount() {
         if(this.props.trigger === 'hover'){
             offClickBlank(this.handler, 'mousemove');
+            this.refBtn.removeEventListener('mouseover', this.hoverHandler);
         }else{
             offClickBlank(this.handler);
         }
-        this.refBtn.removeEventListener('mouseover', this.hoverHandler);
         if(MT_MS === 'IE') {
             this.div.removeNode(true);
         }else{

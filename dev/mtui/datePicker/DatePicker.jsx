@@ -15,7 +15,8 @@ class DatePicker extends Component {
         onChange: function () {
             // ...
         },  // 关闭时候的回调
-        modalClassName: '',
+        modalClass: '',
+        modalStyle: {}, // 
         validateInfo: null,
         format: 'yyyy-mm-dd' // 格式化
     }
@@ -50,13 +51,6 @@ class DatePicker extends Component {
         }
     }
 
-    // 设置 mid
-    setMid() {
-        if (this.mid === null) {
-            this.mid = 'mt_date_' + +new Date();
-        }
-    }
-
     setPlace() {
         return position(this.refBtn);
     }
@@ -64,7 +58,10 @@ class DatePicker extends Component {
     // 渲染div mark == true 表示更新
     renderDiv(mark) {
 
-        this.setMid();
+        // 设置 mid
+        if (this.mid === null) {
+            this.mid = 'mt_date_' + +new Date();
+        }
 
         var self = this;
         var dom = document.getElementById(this.mid);
@@ -81,7 +78,7 @@ class DatePicker extends Component {
                 setPlace={this.setPlace.bind(this)}
                 show={this.state.show}
                 modalStyle={this.props.modalStyle}
-                modalClassName={this.props.modalClassName}
+                modalClass={this.props.modalClass}
                 resetDays={this.resetDays.bind(this)}
                 showOrHide={this.showOrHide.bind(this)} />, this.div); // 
         }
@@ -228,7 +225,7 @@ class DatePicker extends Component {
     }
 
     render() {
-        var { mid, format, showBack, range, modalClassName, defaultValue, value, className, size, datePickers, visible, suffix, validateInfo, onChange, ...other } = this.props;
+        var { mid, format, showBack, range, modalClass, modalStyle, defaultValue, value, className, size, datePickers, visible, suffix, validateInfo, onChange, ...other } = this.props;
         var cName = ['mt-input mt-input-date mt-input-suffix-out'];
         var dayval = formatDate(this.state.inputDate, this.props.format).val;
         if (className) {

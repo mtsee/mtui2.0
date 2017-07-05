@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 
 // activeIndex 默认选中
-// changeback 切换的回调
-// clickback 点击回调
+// changeBack 切换的回调
+// clickBack 点击回调
 // type tabs 定位位置  left,top,bottom,right
 // animate 是否开启动画
 class Tabs extends Component {
@@ -36,28 +36,28 @@ class Tabs extends Component {
         let _tab = this.refs['tab_' + index];
         let _this = this;
         let barStyle = null;
-        if (this.props.type == 'right') {
+        if (this.props.type === 'right') {
             // 设置选中
             barStyle = {
                 width: 2,
                 height: _tab.clientHeight,
                 top: _tab.offsetTop
-            }
-        } else if (this.props.type == 'left') {
+            };
+        } else if (this.props.type === 'left') {
             // 设置选中
             barStyle = {
                 width: 2,
                 height: _tab.clientHeight,
                 top: _tab.offsetTop,
                 left: _tab.clientWidth - 2
-            }
+            };
         } else {
             // 设置选中
             barStyle = {
                 height: 2,
                 width: _tab.clientWidth,
                 left: _tab.offsetLeft
-            }
+            };
         }
 
         this.setState({
@@ -66,18 +66,18 @@ class Tabs extends Component {
         }, function () {
             // 设置moreStyle
             _this.setTranslate3d(_tab, index);
-        })
+        });
 
         // 变化回调函数
-        this.props.changeback ? this.props.changeback(index) : null;
+        this.props.changeBack ? this.props.changeBack(index) : null;
     }
 
     // 设置transX
     setTranslate3d(that, index) {
 
         // 如果是left.right 不设置transX
-        if (this.props.type == 'left' || this.props.type == 'right') {
-            return
+        if (this.props.type === 'left' || this.props.type === 'right') {
+            return;
         }
 
         let thatLeft = that.offsetLeft + that.offsetWidth,
@@ -127,7 +127,7 @@ class Tabs extends Component {
         this.setActiveIndex(index);
 
         // 点击回调
-        this.props.clickback ? this.props.clickback(index) : null;
+        this.props.clickBack ? this.props.clickBack(index) : null;
     }
 
     // 超出宽度，显示切换按钮
@@ -190,7 +190,7 @@ class Tabs extends Component {
     render() {
 
         let _this = this;
-        let { activeIndex, changeback, animate, ...other } = this.props;
+        let { activeIndex, changeBack, animate, ...other } = this.props;
         let style = null;
         if (MT_IE9) {
             style = { "left": this.state.transX };

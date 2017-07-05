@@ -226,7 +226,7 @@ class Select extends Component {
 
                 });
             };
-            this.refBtn.addEventListener('mouseenter', this.hoverHandler);
+            this.refBtn.addEventListener('mouseover', this.hoverHandler);
         }
     }
 

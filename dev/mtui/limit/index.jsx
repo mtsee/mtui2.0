@@ -1,3 +1,3 @@
-import Limit from './Popconfirm';
+import Limit from './Limit';
 
 export default Limit;

@@ -21,6 +21,43 @@ class Dom extends Component {
 	        			<a className="mt-btn mt-btn-warning" onClick={()=>{Tip.warning('警告你，别点我！')}}>警告</a>
 	          		</Grid>
 	          		<Grid className="code">
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        这个方法是一个JS的方法，在js中调用。
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tip.success('成功')</td>
+                <td>成功的提示</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+			<tr>
+                <td>Tip.error('失败了吧~')</td>
+                <td>失败提示</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>Tip.warning('警告你，别点我！')</td>
+                <td>警告提示</td>
+                <td>function</td>
+                <td>null</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pre>
 <code>
 {`

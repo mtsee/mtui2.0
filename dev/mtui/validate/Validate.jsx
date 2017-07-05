@@ -6,6 +6,11 @@ import ReactDOM from 'react-dom';
 import assign from '../utils/assign';
 
 class Validate extends Component {
+
+    static defaultProps = {
+        size: '' // 默认,  min
+    }
+
     // 构造函数
     constructor(props) {
         super(props);
@@ -17,10 +22,6 @@ class Validate extends Component {
         this.onFocus = null; // 获取焦点
         this.onBlur = null; // 失去焦点
         this.lockChange = true; // 监听 onChange的 锁
-    }
-
-    static defaultProps = {
-        size: '' // 默认,  min
     }
 
     // 设置icon

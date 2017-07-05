@@ -21,7 +21,8 @@ class Menu extends Component {
 					<li><Link activeClassName="active-menu" to={HOME+"/ui/sliderbar"}>sliderbar<i>进度条</i></Link></li>
 					<li><Link activeClassName="active-menu" to={HOME+"/ui/select"}>select<i>下拉选择</i></Link></li>
 					<li><Link activeClassName="active-menu" to={HOME+"/ui/radio"}>radio<i>单选</i></Link></li>
-					<li><Link activeClassName="active-menu" to={HOME+"/ui/datePicker"}>datePicker<i>日历</i></Link></li>
+					<li><Link activeClassName="active-menu" to={HOME+"/ui/datepicker"}>datePicker<i>日历</i></Link></li>
+					<li><Link activeClassName="active-menu" to={HOME+"/ui/timepicker"}>timePicker<i>时间</i></Link></li>
 					<li><Link activeClassName="active-menu" to={HOME+"/ui/checkbox"}>checkbox<i>多选</i></Link></li>
 					<li className="classn">数据处理</li>
 					<li><Link activeClassName="active-menu" to={HOME+"/ui/validate"}>validate<i>表单验证</i></Link></li>

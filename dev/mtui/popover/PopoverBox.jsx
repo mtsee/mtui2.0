@@ -50,7 +50,7 @@ class PopoverBox extends Component {
     showOrHide(mark){
         this.setState({
             show: mark
-        }, function(){
+        }, () => {
             this.setStyle();
         });
     }

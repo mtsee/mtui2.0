@@ -5,6 +5,7 @@ import DatePickerBox from '../dateCore/DatePickerBox';
 import { getMDay, weekNumber, addAndDelOneMonth, addOrDelMonthDay, getDateNow, formatDate, setHHMMSS, setMonths, strToObj } from '../dateCore/dateCore';
 import { position } from '../utils/offset';
 import assign from '../utils/assign';
+import { outWindow } from '../utils/outWindow';
 import { getXY, clickBlank, offClickBlank } from '../utils/triggerBlank';
 
 class DatePickers extends Component {
@@ -14,7 +15,8 @@ class DatePickers extends Component {
         placeholder: '选择时间段',
         showBack: null, // 显示时候的回调
         onChange: null, // 关闭时候的回调
-        modalClassName: '',
+        modalClass: '',
+        modalStyle: {},
         range: [',', ','], // 取值范围
         format: 'yyyy-mm-dd' // 格式化
     }
@@ -67,9 +69,10 @@ class DatePickers extends Component {
             }
 
             let { height, left, top, width } = this.setPlace();
+            let out = outWindow(width, height, top, left, {width: 460, height: 280});
             let style = assign([{
-                left: left + 460 > document.body.offsetWidth ? document.body.offsetWidth - 460 - 10 : left, // 判断left,不能超过body区域
-                top: top + height
+                left: out.left,
+                top: out.top
             }, this.props.modalStyle || {}, { display: this.state.show ? 'block' : 'none' }]);
             let { mid, format, ...other } = this.props;
 
@@ -77,8 +80,8 @@ class DatePickers extends Component {
             if (this.props.className) {
                 cName.push(this.props.className);
             }
-            if (this.props.modalClassName) {
-                cName.push(this.props.modalClassName);
+            if (this.props.modalClass) {
+                cName.push(this.props.modalClass);
             }
             if (mid) {
                 this.mid = mid;
@@ -270,7 +273,7 @@ class DatePickers extends Component {
     }
 
     render() {
-        var { mid, format, showBack, range, modalClassName, defaultValue, className, size, onChange, ...other } = this.props;
+        var { mid, format, showBack, range, modalClass, defaultValue, modalStyle, className, size, onChange, ...other } = this.props;
         var dayval = this.state.selectDays ? this.state.selectDays.str : '';
         var cName = ['mt-input mt-input-dates'];
         if (className) {

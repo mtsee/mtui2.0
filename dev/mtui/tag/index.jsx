@@ -1,3 +1,3 @@
-import Panel from './Panel';
+import Tag from './Tag';
 
-export default Panel;
+export default Tag;

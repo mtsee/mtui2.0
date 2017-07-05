@@ -18,7 +18,7 @@ class UI extends Component {
 
         this.setState({
             show: !this.state.show
-        })
+        });
     }
 
     render(){
@@ -69,6 +69,49 @@ class UI extends Component {
                 <Popover trigger="hover" content={'就是一个小提示！'} place='right'>
                     <Button type="danger">hover弹窗在右</Button>
                 </Popover>
+<div className="api">
+    <p className="tips">
+        <span className="apispan">API</span>
+        <span className="tipspan">tips</span>
+        className, style 等默认属性继承DIV标签默认
+    </p>
+    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>trigger</td>
+                <td>交互方式，参数：hover,click</td>
+                <td>string</td>
+                <td>hover</td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>提示框里面的内容</td>
+                <td>Component</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>place</td>
+                <td>提示框的位置，参数：top, left, right, bottom</td>
+                <td>string</td>
+                <td>top</td>
+            </tr>
+            <tr>
+                <td>show</td>
+                <td>提示框默认显示状态， 参数 true/false</td>
+                <td>bool</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
                 <pre><code>
                 {`
 'use strict';

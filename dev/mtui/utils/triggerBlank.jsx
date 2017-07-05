@@ -2,31 +2,27 @@
 * @type class操作
 * @author : Mantou
 */
-import {offsetTop, offsetLeft} from './offset';
+import { position } from './offset';
 
-function getXY(obj){
-    return {
-        width: obj.offsetWidth,
-        height: obj.offsetHeight,
-        left: parseInt(obj.style.left, 10) || offsetLeft(obj),
-        top: parseInt(obj.style.top, 10) || offsetTop(obj)
-    };
+function getXY(dom){
+    return position(dom);
 }
 
 // 如果点击了空白区域就是false
-function clickBlank(obj, callback, events, _btn, onlybtn){
+function clickBlank(dom, callback, events, _btn, onlybtn){
 
     events = events || 'click';
 
     // 点击事件
     var handler = function(e){
-        let modal = getXY(obj);
+        let modal = getXY(dom);
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         let y = e.clientY + scrollTop || 0;
 
+        let btnJudge = false;
         // 如果是hover
-        let btn = null, btnJudge = false;
         if(_btn && events === 'mousemove'){
+            let btn = null;
             btn = getXY(_btn);
             if(e.clientX >= btn.left && e.clientX <= btn.left + btn.width && y >= btn.top && y <= btn.top + btn.height){
                 btnJudge = true;
