@@ -41,6 +41,9 @@ npm地址：[npm](https://www.npmjs.com/package/mtui)  [Node V6.9.5]  [React V15
 ```
 npm install webpack -g
 npm install
+
+浏览器输入
+http://localhost:4001
 ```
 - 开发
   ```

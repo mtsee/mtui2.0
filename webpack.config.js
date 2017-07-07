@@ -29,7 +29,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx', '.scss', '.css'] //require 的时候，可以不用写文件类型
     },
-    devtool: "cheap-module-eval-source-map", //生成map
+    // devtool: "cheap-module-eval-source-map", //生成map
     //插件项
     plugins: [ //将外部的包导出成一个公用的文件比如 jquery，react, react-dom 等
         new HtmlwebpackPlugin({

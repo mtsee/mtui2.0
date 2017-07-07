@@ -2,6 +2,7 @@
 * @type MTUI2.0
 * @author : Mantou
 */
+import 'babel-polyfill';
 import './utils/isIE';
 
 import Grid from './grid/Grid';

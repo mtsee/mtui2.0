@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../dev/mtui/tag/index.jsx"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Panel from './Panel';\r\n\r\nexport default Panel;"]}
+{"version":3,"sources":["../../dev/mtui/tag/index.jsx"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Tag from './Tag';\r\n\r\nexport default Tag;"]}

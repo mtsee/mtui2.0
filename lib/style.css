@@ -6466,6 +6466,9 @@ label {
     .mt-dropdown .mt-modal-close .iconfont {
       font-size: 20px; }
 
+.mt-dropdown-btn {
+  display: inline-block; }
+
 .mt-dropdown-hover:hover .mt-dropdown {
   display: block; }
 
