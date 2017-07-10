@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import LoadingBox from '../LoadingBox/LoadingBox';
+import LoadingBox from '../loadingBox/LoadingBox';
 import { hideScroll, showScroll } from '../utils/bodyscroll';
 
 let LoadingModal = {};
