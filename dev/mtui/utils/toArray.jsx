@@ -6,7 +6,11 @@ function toArray(arr) {
     if (arr instanceof Array) {
         // ...
     } else {
-        arr = [arr];
+        if(!arr) {
+            arr = [];
+        }else {
+            arr = [arr];
+        }
     }
     return arr;
 }

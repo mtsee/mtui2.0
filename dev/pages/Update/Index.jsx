@@ -17,6 +17,7 @@ class Update extends Component {
 				<IndexHeader />
 				<div className="list">
 					<ul>
+						<li><i>2017-07-17</i> 给tabs 添加 className 参数</li>
 						<li><i>2017-07-05</i> 添加了API说明。修改了callBack驼峰的命名标准，格式化了部分代码</li>
 						<li><i>2017-06-28</i> 添加了Input type="textarea" 的支持</li>
 						<li><i>2017-06-05</i> 修改了 utils/offset.jsx 里面的获取DOM的宽和高有误，导致弹窗定位不准确的问题</li>
