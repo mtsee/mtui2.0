@@ -17,6 +17,8 @@ class Update extends Component {
 				<IndexHeader />
 				<div className="list">
 					<ul>
+						<li><i>2017-08-25</i> 修改了 Tabs 组件，key={index} 的问题，这个问题会导致删除tab时的BUG</li>
+						<li><i>2017-08-03</i> 修改了document.body.style = 'string' 的 BUG ，会导致谷歌4.4版本的兼容性问题</li>
 						<li><i>2017-07-17</i> 给tabs 添加 className 参数</li>
 						<li><i>2017-07-05</i> 添加了API说明。修改了callBack驼峰的命名标准，格式化了部分代码</li>
 						<li><i>2017-06-28</i> 添加了Input type="textarea" 的支持</li>

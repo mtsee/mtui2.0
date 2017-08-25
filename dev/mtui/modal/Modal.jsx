@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ModalBox from './ModalBox';
+import { removeDom } from '../utils/dom';
 import { hideScroll, showScroll } from '../utils/bodyscroll';
 
 class Modal extends Component {
@@ -26,11 +27,8 @@ class Modal extends Component {
     }
 
     componentWillUnmount() {
-        if(MT_MS === 'IE') {
-            this.div.removeNode(true);
-        }else{
-            this.div.remove();
-        }
+
+        removeDom(this.div);
         ReactDOM.unmountComponentAtNode(this.div);
     }
 

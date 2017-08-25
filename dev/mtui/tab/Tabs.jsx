@@ -176,14 +176,14 @@ class Tabs extends Component {
             // 设置overflow
             this.setOverflow();
         }
-        
+
         if (nextProps.activeIndex !== this.props.activeIndex) {
             this.setState({
                 activeIndex: nextProps.activeIndex
             }, () => {
                 this.setActiveIndex(nextProps.activeIndex);
             });
-            
+
         }
     }
 
@@ -195,7 +195,7 @@ class Tabs extends Component {
         if (MT_IE9) {
             style = { 'left': this.state.transX };
         } else {
-            style = { 'transform' : 'translate3d(' + this.state.transX + 'px,0,0)' };
+            style = { 'transform': 'translate3d(' + this.state.transX + 'px,0,0)' };
         }
 
         let head = <div ref="head" className={'mt-tabs-header' + (this.state.overflow ? ' mt-tabs-overflow' : '')}>
@@ -204,7 +204,7 @@ class Tabs extends Component {
                     {
                         this.props.children.length != 0 ?
                             this.props.children.map(function (elem, index) {
-                                return <li ref={'tab_' + index} onClick={_this.changeTabs.bind(_this, index)} key={index} className={'mt-tabs-tab' + (_this.state.activeIndex == index ? ' mt-tabs-tab-active' : '')}>{elem.props.name}</li>;
+                                return <li ref={'tab_' + index} onClick={_this.changeTabs.bind(_this, index)} key={elem.key ? elem.key : index} className={'mt-tabs-tab' + (_this.state.activeIndex == index ? ' mt-tabs-tab-active' : '')}>{elem.props.name}</li>;
                             }) : null
                     }
                 </ul>
@@ -217,7 +217,7 @@ class Tabs extends Component {
                 {
                     this.props.children.length !== 0 ?
                         this.props.children.map(function (elem, index) {
-                            return <div key={index} className={"mt-tabs-item" + (_this.state.activeIndex == index ? ' mt-tabs-item-active' : '')}>{elem.props.children}</div>;
+                            return <div key={elem.key ? elem.key : index} className={"mt-tabs-item" + (_this.state.activeIndex == index ? ' mt-tabs-item-active' : '')}>{elem.props.children}</div>;
                         }) : null
                 }
             </div>
@@ -228,7 +228,7 @@ class Tabs extends Component {
         let nextBtn = this.state.overflow ? <a onClick={this.prevAndNextClick.bind(_this, 'next')} className={'mt-tabs-next' + (this.state.disable.next ? ' mt-tabs-disabled' : '')}><i className="iconfont icon-arrowr"></i></a> : null;
 
         let cName = ['mt-tabs'];
-        if(className) {
+        if (className) {
             cName.push(className);
         }
 

@@ -5,6 +5,7 @@ import PopoverBox from './PopoverBox';
 import {position, offsetLeft, offsetTop} from '../utils/offset';
 import { getXY,  clickBlank,  offClickBlank } from '../utils/triggerBlank';
 import assign from '../utils/assign';
+import { removeDom } from '../utils/dom';
 
 class Popover extends Component {
 
@@ -133,11 +134,7 @@ class Popover extends Component {
         }else{
             offClickBlank(this.handler);
         }
-        if(MT_MS === 'IE') {
-            this.div.removeNode(true);
-        }else{
-            this.div.remove();
-        }
+        removeDom(this.div);
         ReactDOM.unmountComponentAtNode(this.div);
     }
 

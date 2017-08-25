@@ -7,6 +7,7 @@ import { position } from '../utils/offset';
 import { toArray } from '../utils/toArray';
 import { clickBlank, offClickBlank } from '../utils/triggerBlank';
 import assign from '../utils/assign';
+import { removeDom } from '../utils/dom';
 
 class Select extends Component {
 
@@ -238,11 +239,8 @@ class Select extends Component {
             offClickBlank(this.handler);
         }
         this.refBtn.removeEventListener('mouseenter', this.hoverHandler);
-        if(MT_MS === 'IE') {
-            this.div.removeNode(true);
-        }else{
-            this.div.remove();
-        }
+
+        removeDom(this.div);
         ReactDOM.unmountComponentAtNode(this.div);
     }
 
