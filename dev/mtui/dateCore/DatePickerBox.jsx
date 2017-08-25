@@ -74,6 +74,7 @@ class DatePickerBox extends Component {
             month: month,
             day: day
         };
+        console.log(obj);
         this.setHeadTime(obj);
         this.props.resetDays(obj, function () {
             if (self.state.show === 'year') {
@@ -213,6 +214,11 @@ class DatePickerBox extends Component {
             this.setState({
                 headtime: obj.year
             });
+        }else if (this.state.show === 'year') {
+            this.setState({
+                headtime: obj.year + '-' + (parseInt(obj.year, 10) + 30)
+            });
+            this.iniYear(obj.year);
         }
     }
 
@@ -346,7 +352,7 @@ class DatePickerBox extends Component {
             let { height, left, top, width } = set;
 
             // 计算临界值，重新设置left,top
-            let out = outWindow(width, height, top, left, {width: 230, height: 280});
+            let out = outWindow(width, height, top, left, { width: 230, height: 280 });
             style = assign([{
                 left: out.left,
                 top: out.top
