@@ -204,6 +204,9 @@ class Tabs extends Component {
                     {
                         this.props.children.length != 0 ?
                             this.props.children.map(function (elem, index) {
+                                if (!elem) {
+                                    return null;
+                                }
                                 return <li ref={'tab_' + index} onClick={_this.changeTabs.bind(_this, index)} key={elem.key ? elem.key : index} className={'mt-tabs-tab' + (_this.state.activeIndex == index ? ' mt-tabs-tab-active' : '')}>{elem.props.name}</li>;
                             }) : null
                     }
@@ -217,6 +220,9 @@ class Tabs extends Component {
                 {
                     this.props.children.length !== 0 ?
                         this.props.children.map(function (elem, index) {
+                            if (!elem) {
+                                return null;
+                            }
                             return <div key={elem.key ? elem.key : index} className={"mt-tabs-item" + (_this.state.activeIndex == index ? ' mt-tabs-item-active' : '')}>{elem.props.children}</div>;
                         }) : null
                 }
