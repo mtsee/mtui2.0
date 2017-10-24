@@ -42,6 +42,7 @@ class TimePicker extends Component {
             minList: natureArray(60).map(hour => leftPad(hour, 2, '0')),
             secList: natureArray(60).map(hour => leftPad(hour, 2, '0'))
         };
+        this.onScroll = this.onScroll.bind(this);
     }
 
     // 渲染前
@@ -53,7 +54,7 @@ class TimePicker extends Component {
     }
 
     componentWillUnmount(){
-        document.onmousewheel = null;
+        document.removeEventListener('mousewheel', this.onScroll);
     }
  
     // 更新弹窗里面的数据
@@ -65,7 +66,7 @@ class TimePicker extends Component {
         this.setState({
             time: this.props.value ? this.props.value.split(':') : format(new Date()).split(':')
         });
-        document.onmousewheel = this.onScroll.bind(this);
+        document.addEventListener('mousewheel', this.onScroll);
     }
     
     onScroll(evt) {
