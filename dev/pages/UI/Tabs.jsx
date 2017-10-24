@@ -57,7 +57,12 @@ class Dom extends Component {
                 <h3 className="mt-panel-h2">Tabs 切换</h3>
                 <div className="mt-panel-box">
                     <div>
+                        <Tabs type="top" className="tabsStyle" animate={false}>
+                            <TabItem name="数据源">数据源</TabItem>
+                            <TabItem name="接口">接口</TabItem>
+                        </Tabs>
                         <Grid width="1/4" className="grids">
+
                             <Tabs type="top" activeIndex={this.state.index} changeBack={this.changeBack.bind(this)}>
                                 <TabItem name='标题1'>内容1</TabItem>
                                 <TabItem name='标题2'>{this.state.text}</TabItem>
@@ -80,7 +85,7 @@ class Dom extends Component {
                     </div>
                     <div>
                         <Grid width="1/4" className="grids">
-                            <Tabs type="bottom" activeIndex={0} changeBack={this.changeBack.bind(this)}>
+                            <Tabs type="bottom" animate={false} activeIndex={0} changeBack={this.changeBack.bind(this)}>
                                 <TabItem name='标题1'>内容1</TabItem>
                                 <TabItem name='标题2'>内容 2</TabItem>
                                 <TabItem name='标题3'>内容 3</TabItem>
@@ -107,10 +112,10 @@ class Dom extends Component {
                     </div>
                     <div>
                         <Grid width="1/4" className="grids">
-                            <Tabs activeIndex={0} changeBack={this.changeBack.bind(this)}>
+                            <Tabs activeIndex={0} animate={false} changeBack={this.changeBack.bind(this)}>
                                 {
                                     this.state.items.map(function (elem, index) {
-                                        return <TabItem key={index} name={elem.name}>{elem.contents}</TabItem>;
+                                        return <TabItem key={index} name={elem.name}>{elem.contents}{index}</TabItem>;
                                     })
                                 }
                             </Tabs>
@@ -119,55 +124,55 @@ class Dom extends Component {
                         <br />
                         <a onClick={this.addItems.bind(this)} className="mt-btn">add</a>
                     </div>
-<div className="api">
-    <p className="tips">
-        <span className="apispan">API</span>
-        <span className="tipspan">tips</span>
-        className, style 继承原来的标签默认
+                    <div className="api">
+                        <p className="tips">
+                            <span className="apispan">API</span>
+                            <span className="tipspan">tips</span>
+                            className, style 继承原来的标签默认
     </p>
-    <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
-        <thead>
-            <tr>
-                <th>属性</th>
-                <th>说明</th>
-                <th>类型</th>
-                <th>默认值</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>type</td>
-                <td>tabs标题的位置，参数：top, left, right, bottom</td>
-                <td>string</td>
-                <td>top</td>
-            </tr>
-            <tr>
-                <td>animate</td>
-                <td>是否开启切换动画，参数 false/true</td>
-                <td>bool</td>
-                <td>true</td>
-            </tr>
-            <tr>
-                <td>activeIndex</td>
-                <td>默认选中</td>
-                <td>number</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>changeBack</td>
-                <td>切换后的回调函数 callback(index)</td>
-                <td>function</td>
-                <td>null</td>
-            </tr>
-            <tr>
-                <td>clickBack</td>
-                <td>点击后的回调函数 callback(index)</td>
-                <td>function</td>
-                <td>null</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                        <table className="mt-table mt-table-hover mt-table-striped mt-table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>说明</th>
+                                    <th>类型</th>
+                                    <th>默认值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>type</td>
+                                    <td>tabs标题的位置，参数：top, left, right, bottom</td>
+                                    <td>string</td>
+                                    <td>top</td>
+                                </tr>
+                                <tr>
+                                    <td>animate</td>
+                                    <td>是否开启切换动画，参数 false/true</td>
+                                    <td>bool</td>
+                                    <td>true</td>
+                                </tr>
+                                <tr>
+                                    <td>activeIndex</td>
+                                    <td>默认选中</td>
+                                    <td>number</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>changeBack</td>
+                                    <td>切换后的回调函数 callback(index)</td>
+                                    <td>function</td>
+                                    <td>null</td>
+                                </tr>
+                                <tr>
+                                    <td>clickBack</td>
+                                    <td>点击后的回调函数 callback(index)</td>
+                                    <td>function</td>
+                                    <td>null</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <pre><code>
                         {`
 /*

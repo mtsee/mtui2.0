@@ -90,7 +90,7 @@ class Tabs extends Component {
         } else if (thatLeft - transX > headWidth - (that.nextSibling ? that.nextSibling.offsetWidth : 0)) {
             // console.log('右超出')
             // 偏移headWidth - thatLeft;
-            transX = headWidth - thatLeft - (this.props.children.length == index + 1 ? 0 : that.nextSibling.offsetWidth)
+            transX = headWidth - thatLeft - (this.props.children.length == index + 1 ? 0 : that.nextSibling.offsetWidth);
         } else {
             transX = -transX;
         }
@@ -104,22 +104,22 @@ class Tabs extends Component {
             disable = {
                 prev: true,
                 next: false
-            }
+            };
         } else if (-transX == this.refs.box.offsetWidth - this.refs.head.offsetWidth) {
             disable = {
                 prev: false,
                 next: true
-            }
+            };
         } else {
             disable = {
                 prev: false,
                 next: false
-            }
+            };
         }
         this.setState({
             transX: transX,
             disable: disable
-        })
+        });
     }
 
     // tabs切换触发
@@ -139,7 +139,7 @@ class Tabs extends Component {
         if (this.refs.head.offsetWidth < this.refs.box.offsetWidth) {
             this.setState({
                 overflow: true
-            })
+            });
             this.setTransX(this.state.transX);
         }
     }
@@ -172,82 +172,99 @@ class Tabs extends Component {
     componentWillReceiveProps(nextProps) {
 
         // 监听按钮
-        if (nextProps.children.length != this.props.children.length) {
+        if (nextProps.children.length !== this.props.children.length) {
             // 设置overflow
             this.setOverflow();
         }
-        
+
         if (nextProps.activeIndex !== this.props.activeIndex) {
             this.setState({
                 activeIndex: nextProps.activeIndex
             }, () => {
                 this.setActiveIndex(nextProps.activeIndex);
             });
-            
+
         }
     }
 
     render() {
 
         let _this = this;
-        let { activeIndex, changeBack, animate, ...other } = this.props;
+        let { activeIndex, changeBack, className, animate, ...other } = this.props;
         let style = null;
         if (MT_IE9) {
-            style = { "left": this.state.transX };
+            style = { 'left': this.state.transX };
         } else {
-            style = { "transform": "translate3d(" + this.state.transX + "px,0,0)" };
+            style = { 'transform': 'translate3d(' + this.state.transX + 'px,0,0)' };
         }
 
-        let head = <div ref="head" className={"mt-tabs-header" + (this.state.overflow ? ' mt-tabs-overflow' : '')}>
+        let head = <div ref="head" className={'mt-tabs-header' + (this.state.overflow ? ' mt-tabs-overflow' : '')}>
             <div className="mt-tabs-headbox" style={style}>
                 <ul ref="box" className="clearfix">
                     {
                         this.props.children.length != 0 ?
                             this.props.children.map(function (elem, index) {
-                                return <li ref={'tab_' + index} onClick={_this.changeTabs.bind(_this, index)} key={index} className={"mt-tabs-tab" + (_this.state.activeIndex == index ? ' mt-tabs-tab-active' : '')}>{elem.props.name}</li>
+                                if (!elem) {
+                                    return null;
+                                }
+                                return <li ref={'tab_' + index} onClick={_this.changeTabs.bind(_this, index)} key={elem.key ? elem.key : index} className={'mt-tabs-tab' + (_this.state.activeIndex == index ? ' mt-tabs-tab-active' : '')}>{elem.props.name}</li>;
                             }) : null
                     }
                 </ul>
                 <div className="mt-tabs-active-bar" style={this.state.barStyle}></div>
             </div>
-        </div>
+        </div>;
+
         let body = <div className="mt-tabs-content">
-            <div className={"mt-tabs-items clearfix" + (this.props.animate ? " mt-tabs-animate" : "")}>
+            <div className={'mt-tabs-items clearfix' + (this.props.animate ? ' mt-tabs-animate' : '')}>
                 {
-                    this.props.children.length != 0 ?
+                    this.props.children.length !== 0 ?
                         this.props.children.map(function (elem, index) {
-                            return <div key={index} className={"mt-tabs-item" + (_this.state.activeIndex == index ? ' mt-tabs-item-active' : '')}>{elem.props.children}</div>
+                            if (!elem) {
+                                return null;
+                            }
+                            return <div key={elem.key ? elem.key : index} className={"mt-tabs-item" + (_this.state.activeIndex == index ? ' mt-tabs-item-active' : '')}>{elem.props.children}</div>;
                         }) : null
                 }
             </div>
         </div>;
-        let prevBtn = this.state.overflow ? <a onClick={this.prevAndNextClick.bind(_this, 'prev')} className={"mt-tabs-prev" + (this.state.disable.prev ? ' mt-tabs-disabled' : '')}><i className="iconfont icon-arrowl"></i></a> : null;
-        let nextBtn = this.state.overflow ? <a onClick={this.prevAndNextClick.bind(_this, 'next')} className={"mt-tabs-next" + (this.state.disable.next ? ' mt-tabs-disabled' : '')}><i className="iconfont icon-arrowr"></i></a> : null;
-        if (this.props.type == 'top') {
+
+        let prevBtn = this.state.overflow ? <a onClick={this.prevAndNextClick.bind(_this, 'prev')} className={'mt-tabs-prev' + (this.state.disable.prev ? ' mt-tabs-disabled' : '')}><i className="iconfont icon-arrowl"></i></a> : null;
+
+        let nextBtn = this.state.overflow ? <a onClick={this.prevAndNextClick.bind(_this, 'next')} className={'mt-tabs-next' + (this.state.disable.next ? ' mt-tabs-disabled' : '')}><i className="iconfont icon-arrowr"></i></a> : null;
+
+        let cName = ['mt-tabs'];
+        if (className) {
+            cName.push(className);
+        }
+
+        if (this.props.type === 'top') {
             return (
-                <div className="mt-tabs" {...other}>
+                <div className={cName.join(' ')} {...other}>
                     {prevBtn}
                     {nextBtn}
                     {head}
                     {body}
                 </div>
-            )
-        } else if (this.props.type == 'bottom') {
+            );
+        } else if (this.props.type === 'bottom') {
             return (
-                <div className="mt-tabs" {...other}>
+                <div className={cName.join(' ')} {...other}>
                     {prevBtn}
                     {nextBtn}
                     {body}
                     {head}
                 </div>
-            )
+            );
         } else {
+            cName.push('clearfix');
+            cName.push('mt-tabs-' + this.props.type);
             return (
-                <div className={"mt-tabs clearfix mt-tabs-" + this.props.type} {...other}>
+                <div className={cName.join(' ')} {...other}>
                     {head}
                     {body}
                 </div>
-            )
+            );
         }
     }
 }
@@ -260,7 +277,7 @@ class TabItem extends Component {
     }
 
     render() {
-        return null
+        return null;
     }
 }
 

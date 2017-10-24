@@ -5,6 +5,7 @@ import DatePickerBox from '../dateCore/DatePickerBox';
 import { getMDay, weekNumber, addAndDelOneMonth, addOrDelMonthDay, getDateNow, formatDate, setHHMMSS, setMonths, strToObj } from '../dateCore/dateCore';
 import { position } from '../utils/offset';
 import assign from '../utils/assign';
+import { removeDom } from '../utils/dom';
 import { outWindow } from '../utils/outWindow';
 import { getXY, clickBlank, offClickBlank } from '../utils/triggerBlank';
 
@@ -264,11 +265,7 @@ class DatePickers extends Component {
     // 卸载组件
     componentWillUnmount() {
         offClickBlank(this.handler);
-        if(MT_MS === 'IE') {
-            this.div.removeNode(true);
-        }else{
-            this.div.remove();
-        }
+        removeDom(this.div);
         ReactDOM.unmountComponentAtNode(this.div);
     }
 

@@ -23,7 +23,7 @@ class TimePicker extends Component {
     static defaultProps = {
         value: '', // 默认当前的时间，如果输入的话，强约定格式为：hh:mm:ss
         onChange: function() {return;},
-        width: 240,
+        width: 220,
         itemsToshow: 7,
         inputClassName: '',
         modalClassName: ''
@@ -225,7 +225,7 @@ class TimePicker extends Component {
                             </div>
                         </div>
                         <div className="mt-timepicker-operation">
-                            <Button onClick={this.btnCancel.bind(this)}>取消</Button>
+                            <Button onClick={this.btnCancel.bind(this)}>取消</Button>&nbsp;&nbsp;
                             <Button type="primary" onClick={this.btnOkay.bind(this)}>确定</Button>
                         </div>
         			</div>

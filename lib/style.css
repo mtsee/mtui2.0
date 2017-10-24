@@ -6925,8 +6925,10 @@ label {
   .mt-radio-disabled:hover .mt-radio-icon {
     border-color: #ccc; }
 
-.mt-radio-group .mt-radio {
-  margin-right: 10px; }
+.mt-radio-group {
+  display: inline-block; }
+  .mt-radio-group .mt-radio {
+    margin-right: 10px; }
 
 .mt-radio-group-button {
   font-size: 12px; }
@@ -7447,7 +7449,6 @@ label {
 /* popover 提示*/
 .mt-popover {
   position: absolute;
-  max-width: 300px;
   font-size: 12px;
   padding: 6px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);

@@ -31,12 +31,12 @@ class ModalBox extends Component {
         if( nextProps.show !== this.props.show ) {
             if( nextProps.show ){
                 this.setState({
-                    className: 'animated zoomIn' + nextProps.className,
+                    className: 'animated zoomIn ' + nextProps.className,
                     show: nextProps.show
                 });
             }else {
                 this.setState({
-                    className: 'animated zoomOut' + nextProps.className
+                    className: 'animated zoomOut ' + nextProps.className
                 });
                 this.timer = setTimeout( () => {
                     this.setState({
@@ -57,8 +57,13 @@ class ModalBox extends Component {
             marginLeft: - (width || 600) / 2,
             marginTop: - (height || 400) / 2
         }, this.props.style || {}]);
+
+        let cName = ['mt-modal'];
+        if(this.props.className) {
+            cName.push(this.props.className);
+        }
         
-        return <div className="mt-modal" id={this.props.mid} 
+        return <div className={cName.join(' ')} id={this.props.mid} 
                     style={{
                         display: this.state.show ? 'block' : 'none', 
                         zIndex: this.props.zIndex || 1000 }

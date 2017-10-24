@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { offsetLeft, offsetTop } from '../utils/offset';
 import assign from '../utils/assign';
+import { removeDom } from '../utils/dom';
 
 class Button extends Component {
     // 构造函数
@@ -48,11 +49,7 @@ class Button extends Component {
         }, function () {
             if (window.applicationCache) { // 如果支持
                 self.refs['ink_' + tmp].addEventListener('webkitAnimationEnd', function () { // 动画结束时事件 
-                    if(MT_MS === 'IE') {
-                        this.removeNode(true);
-                    }else{
-                        this.remove();
-                    }
+                    removeDom(this);
                 }, false);
             }
         });
@@ -108,7 +105,7 @@ class Button extends Component {
 
         let styles = style || {};
         styles = assign([{
-            width: ( htmlType === 'submit' && block ) ? '100%' : ''
+            width: (htmlType === 'submit' && block) ? '100%' : ''
         }, styles]);
 
         return (
@@ -118,7 +115,7 @@ class Button extends Component {
                 {suffix ? <span className="mt-button-suffix">{suffix}</span> : null}
                 {
                     this.state.inks.map(function (elem, index) {
-                        return <div style={{ left: elem.x, top: elem.y}} key={elem.tmp} ref={'ink_' + elem.tmp} className="mt-ink"></div>;
+                        return <div style={{ left: elem.x, top: elem.y }} key={elem.tmp} ref={'ink_' + elem.tmp} className="mt-ink"></div>;
                     })
                 }
             </Dom>
