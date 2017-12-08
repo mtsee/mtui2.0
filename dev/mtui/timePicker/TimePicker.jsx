@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Dropdown from '../dropdown/Dropdown';
 import Input from '../input/Input';
-import Button from '../Button';
+import Button from '../button/Button';
 import PropTypes from 'prop-types';
 import './style.scss';
 import leftPad from '../utils/leftPad';
