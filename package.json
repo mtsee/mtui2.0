@@ -1,7 +1,7 @@
 {
   "name": "mtui",
   "author": "Mantou",
-  "version": "2.4.56",
+  "version": "2.4.59",
   "description": "webpack and gulp for react",
   "main": "lib/index.js",
   "license": "MIT",
@@ -36,7 +36,6 @@
     "gulp-sftp": "^0.1.5",
     "html-webpack-plugin": "^2.24.1",
     "jsx-loader": "^0.13.2",
-    "node-sass": "^3.4.2",
     "rc-upload": "^2.2.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
@@ -54,6 +53,7 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.13.3",
+    "node-sass": "^4.7.2",
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {

@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 
 // activeIndex 默认选中

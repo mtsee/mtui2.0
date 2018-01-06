@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { getMDay, weekNumber, judgeDate, addAndDelOneMonth, getDateNow, formatDate, setHHMMSS, setDays, setMonths } from '../dateCore/dateCore';

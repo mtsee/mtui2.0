@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 import Dropdown from '../dropdown/Dropdown';
 import Input from '../input/Input';

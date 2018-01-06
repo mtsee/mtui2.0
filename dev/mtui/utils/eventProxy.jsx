@@ -1,5 +1,5 @@
 // eventProxy.js
-'use strict';
+
 const eventProxy = {
     onObj: {},
     oneObj: {},

@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 import setGridName from '../utils/setGridName'; // 按钮，输入框同样有该属性
 

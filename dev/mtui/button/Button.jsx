@@ -1,4 +1,3 @@
-'use strict';
 import React, { Component } from 'react';
 import { offsetLeft, offsetTop } from '../utils/offset';
 import assign from '../utils/assign';

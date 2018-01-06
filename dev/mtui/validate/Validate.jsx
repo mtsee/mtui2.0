@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 import regex from './regex';
 import eventProxy from '../utils/eventProxy';

@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 
 // loading 占位

@@ -1,4 +1,4 @@
-'use strict';
+
 import React, { Component } from 'react';
 import { formatDate, addAndDelOneMonth, getMDay, fliterNum, getDateNow, setHHMMSS, setDays, setMonths } from './dateCore';
 import assign from '../utils/assign';
