@@ -2,7 +2,7 @@
 import './style.scss';
 import React, { Component } from 'react';
 
-class Limit extends Component {
+export default class Limit extends Component {
     // 构造函数
     constructor(props) {
         super(props);
@@ -38,6 +38,3 @@ class Limit extends Component {
         );
     }
 }
-
-// 主页
-export default Limit;

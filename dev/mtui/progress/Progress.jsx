@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import assign from '../utils/assign';
 
 class Progress extends Component {
     // 构造函数
@@ -32,7 +31,7 @@ class Progress extends Component {
         if (size) {
             styles.width = size;
         }
-        styles = assign([style || {}, styles]);
+        styles = Object.assign(style || {}, styles);
         let val = (value * 100).toFixed(fixed);
         return (
             <div {...other} style={styles} className={cName.join(' ')}>
@@ -58,5 +57,5 @@ class Progress extends Component {
     }
 }
 
-//主页
+// 主页
 export default Progress;
